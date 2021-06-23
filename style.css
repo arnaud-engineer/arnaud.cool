@@ -1,0 +1,425 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root
+{
+	--headerHeight: min(80px, 16vh);
+
+	/* automatic calculation */
+	--frameHeight: calc(100vh - var(--headerHeight)); /* cross product of height */
+	--frameWidth: calc((16 * (100vh - var(--headerHeight))) / 9); /* (window width - frame width) / 2 */
+	--frameMargin: max((calc(100vw - var(--frameWidth)) / 2), 0vw);
+
+	/*
+	--frameMargin: calc((100vw - var(--frameWidth)) / 2);
+	*/
+}
+
+body
+{
+	overflow: hidden;
+	background-color: #ffffed;
+
+	overflow: hidden;
+}
+
+	main
+	{
+		/*background-color: orange;*/
+
+		height: var(--frameHeight);
+		width: 100vw;
+
+		overflow-x: auto;
+		overflow-y: auto;
+
+		position: relative;
+
+		overflow: hidden;
+	}
+
+		/*
+			preserveAspectRatio="xMinYMin meet"
+		*/
+
+		main #myOffice
+		{
+			height: var(--frameHeight);
+			width: var(--frameWidth);
+
+			margin-left: var(--frameMargin);
+			/*margin-left: var(--frameMargin);*/
+			position: absolute;
+
+			overflow: hidden;
+
+			z-index: 1;
+
+			overflow: hidden;
+		}
+
+			main #myOffice img#logo
+			{
+				position: absolute;
+				top: calc(100% * .8);
+				left: calc(100% * .8);
+				width: 50px; height: 50px;
+			}
+
+			/*
+			main #myOffice img#desk
+			{
+				position: absolute;
+				top: 0; left: 0;
+				width: 100%; height: 100%;
+
+				transition: all .2s ease;
+			}
+			*/
+
+
+				/*
+				main #myOffice img:hover
+				{
+					transform: scale(1.02);
+					opacity: .8;
+				}
+				*/
+/*
+			main #myOffice img#keyboard
+			{
+				position: absolute;
+				top: 60%;
+				left: 5%;
+				width: 90%; height: 100%;
+
+				transform-origin: top;
+
+				transition: all .2s ease;
+
+				background-color: pink;
+			}
+*/
+
+			main #myOffice img, main #myOffice video
+			{
+				position: absolute;
+
+				transform-origin: center;
+				transition: all .3s ease;
+
+				cursor: pointer;
+
+			}
+
+
+				main #myOffice img#desk { z-index: 8; }
+				main #myOffice img {
+					z-index: 10;
+				}
+
+
+			/* BACKGROUND */
+			main #myOffice img#diploma
+			{
+				top: 10%; left: 7%;
+				width: 20%; height: 20%;
+			}
+
+			main #myOffice img#shelf
+			{
+				top: 7%; left: 67%;
+				width: 38%; height: 38%;
+				cursor: default;
+			}
+
+			main #myOffice img#switch
+			{
+				top: 40%; left: 5%;
+				width: 9%; height: 9%;
+			}
+
+
+
+			/* DESK */
+
+
+
+			main #myOffice img#desk
+			{
+				top: 32%; left: 2.5%;
+				width: 95%; height: 95%;
+				cursor: default;
+			}
+
+
+			main #myOffice img#keyboard
+			{
+				top: 70%; left: 37%;
+				width: 26%; height: 25%;
+			}
+
+			main #myOffice img#mouse
+			{
+				top: 78%; left: 67%;
+				width: 8%; height: 8%;
+			}
+
+			main #myOffice img#monitor
+			{
+				top: 15%; left: 27%;
+				width: 46%; height: 46%;
+			}
+
+
+			main #myOffice img#macbook
+			{
+				top: 39%; left: 13%;
+				width: 26%; height: 26%;
+			}
+
+				#macbook_background
+				{
+					position: absolute;
+					z-index: 9;
+					top: 39.25%; left: 18.3%;
+					width: 15.6%; height: 17%;
+					background-color: black;
+				}
+
+				main #myOffice video#jolitube
+				{
+					z-index: 9;
+					top: 40.25%; left: 18.5%;
+					width: 15%; height: 15%;
+
+					/*border:5px black solid;
+					background-color: black;*/
+				}
+
+			main #myOffice img#ruler
+			{
+				top: 64%; left: 30%;
+				width: 15%; height: 15%;
+			}
+
+			main #myOffice img#tarzanne
+			{
+				top: 33%; left: 57%;
+				width: 26%; height: 26%;
+			}
+
+
+				main #myOffice img#diploma:hover,
+				main #myOffice img#keyboard:hover,
+				main #myOffice img#mouse:hover,
+				main #myOffice img#monitor:hover,
+				main #myOffice #macbook:hover,
+				main #myOffice #macbook:hover + video,
+				main #myOffice #macbook:hover + #macbook_background,
+				main #myOffice img#ruler:hover,
+				main #myOffice img#tarzanne:hover
+				{
+					transform: scale(1.05);
+					/*opacity: .9;*/
+					filter: brightness(60%);
+				}
+
+
+
+			main #myOffice img#jacquouille
+			{
+				top: 56%; left: 2%;
+				width: 45%; height: 45%;
+				cursor: default;
+
+				transition: all .4s ease;
+			}
+
+			main #myOffice img#bulle
+			{
+				top: 45%; left: 26%;
+				width: 34%; height: 34%;
+				cursor: default;
+
+				transition: all .7s ease;
+			}
+
+			main #myOffice img#jacquouille,
+			main #myOffice img#bulle
+			{ transform: translateY(200%); }
+
+			main #myOffice img#jacquouille.displayed,
+			main #myOffice img#bulle.displayed/*.displayed*/
+			{
+				transform: translateY(0%);
+			}
+
+
+header
+{
+	height: var(--headerHeight);
+	width: 100vw;
+
+	display: flex;
+}
+
+	header > div
+	{
+		width: min(var(--frameWidth), 100vw);
+		margin: auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+
+	header h1
+	{
+	}
+
+		header h1 a
+		{
+			display: inline-block;
+
+			text-decoration: none;
+
+			transition: all .2s ease;
+			transform-origin: left;
+		}
+
+			header h1 a:hover
+			{ transform: scale(1.02); opacity: .8; }
+
+			header h1 a img
+			{
+				height: calc(var(--headerHeight) * .8);
+				/*width: 100%;*/
+				margin: calc(var(--headerHeight) * .1);
+
+				vertical-align: middle;
+			}
+
+	header button
+	{
+		width: var(--headerHeight);
+		height: var(--headerHeight);
+		font-size: var(--headerHeight);
+		vertical-align: text-top;
+
+		overflow: hidden; /* bug with text content on firefox TODO : maybe removable in the future */
+
+		-webkit-appearance: none;
+    	-moz-appearance: none;
+    	border: none;
+    	background-color: transparent;
+	}
+
+		header button img
+		{
+			width: 100%;
+			height: 100%;
+			padding: 20%;
+
+			cursor: pointer;
+
+			transition: all .3s ease;
+		}
+
+		header button:hover img
+		{ transform: scale(1.05); opacity: .8; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	#link-presentation
+	{ 
+		position: absolute;
+		top: 0; left: 0;
+		height: var(--frameHeight);
+		display: none;
+		z-index: 100;
+
+		transition: all .3s ease;
+
+		overflow: hidden;
+	}
+
+		#link-presentation.displayed
+		{ display: block; }
+
+		#link-presentation-background
+		{
+			z-index: 100;
+			background-color: black;
+			opacity: 0;
+			width: max(100vw, (16 / 9) * 100vh);
+			height: 100vh;
+		}
+
+
+		#content-frame
+		{
+			position: fixed;
+			/*top: max(20px, min(10vh, 10vw)); left: max(20px, min(10vh, 10vw));*/
+			top: max(10px + var(--headerHeight), min(6vh, 6vw) + var(--headerHeight)); left: max(10px + var(--frameMargin), min(6vh, 6vw) + var(--frameMargin));
+			width: min(500px, 88vw);
+			height: min(500px, 88vh);
+			background-color: #ffffed;
+
+			padding: max(10px, min(6vh, 6vw));
+
+			box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+			transition: all .3s ease;
+
+			opacity: 1;
+
+			transform: translateY(50%);
+		}
+
+		.displayed #content-frame
+		{
+			transform: translateY(0%);
+		}
+
+
+
+		#content-logo
+		{
+			max-height: 60px;
+			width: auto;
+			max-width: 50%;
+		}
+
+
+
+
+
+
+	body.night
+	{
+		background-color: #1C1C1C;
+	}
+
+	body.night main #myOffice img
+	{
+		filter: brightness(.3);
+	}
+
+	body.night header
+	{
+		filter: invert(100%);
+	}
+
+
+
+	/* TODO :; filter: drop-shadow(16px 16px 20px red); */

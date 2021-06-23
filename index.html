@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<!-- ENCODAGE -->
+			<meta charset="utf-8" />
+		<!-- PAGE INFO -->
+			<title>PAGE_TITLE</title>
+		<!-- RESPONSIVENESS -->
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<!-- CSS -->
+			<link rel="stylesheet" href="style.css" />
+		<!-- JavaScript (ORDER : https://support.freshmarketer.com/support/solutions/articles/50000001426-synchronous-and-asynchronous-script-execution )-->
+			<script src="script.js"></script>
+	</head>
+
+	<body>
+		<noscript>JavaScript is currently disabled on your browser, to enhanced your browsing experience you should activate it : <a href="https://www.enable-javascript.com">see how</a></noscript>
+
+		<header>
+			<div>
+				<button><img src="rsrc/img/hamburger-button.svg"/></button> <!-- ☰ -->
+				<h1>
+					<a href="#"><img src="rsrc/img/arnaud-cool-logo.svg" id="site-logo"/></a>
+				</h1>
+			</div>
+		</header>
+
+		<main>
+			<div id="myOffice">
+				<!--<img id="logo" src="rsrc/img/arnaudCoolLogo.svg"/>-->
+				<img id="diploma" src="rsrc/img/diploma.svg" onclick="displayFrame(this, 'arnaud-engineer');"/>
+				<img id="shelf" src="rsrc/img/shelf.svg"/>
+
+				<img id="switch" src="rsrc/img/switch-on.svg" onclick="setNightMode();"/>
+
+
+
+
+
+				<img id="desk" src="rsrc/img/desk6.svg"/>
+
+				<img id="keyboard" src="rsrc/img/keyboard2.svg"/>
+				<img id="mouse" src="rsrc/img/mouse.svg"/>
+
+				<div id="animated_macbook">
+					<img id="macbook" src="rsrc/img/macbook.svg" onclick="displayFrame(this, 'jolitube');"/> <!-- JOLITUBE : https://www.youtube.com/watch?v=Rh5XoRmcky8 .14 -> .32 -->
+					<div id="macbook_background"></div>
+					<video id="jolitube" autoplay loop muted>
+						<source src="rsrc/video/jolitube.mp4" type="video/mp4">
+					</video>
+				</div>
+
+				<img id="monitor" src="rsrc/img/monitor.svg" />
+
+				<img id="ruler" src="rsrc/img/ruler.svg" onclick="displayFrame(this, 'truesizes');"/>
+				<img id="tarzanne" src="rsrc/img/tarzanne.svg" onclick="displayFrame(this, 'tarzanne');"/>
+
+				<img id="jacquouille" src="rsrc/img/jacquouille.svg"/>
+				<img id="bulle" src="rsrc/img/bulle-jour.svg"/>
+			</div>
+
+			
+			<div id="link-presentation">
+				<div id="link-presentation-background"></div>
+				<div id="content-frame">
+					<!--<h1 id="content-name">TEST TITLE</h1>-->
+					<img id="content-logo"/>
+					<p id="content-description">test</p>
+					<!--<img/>-->
+					<a id="content-link"  target="_blank">go to TEST TITLE</a>
+				</div>
+			</div>
+			
+		</main>
+
+	</body>
+</html>
