@@ -22,6 +22,7 @@ body
 
 	main
 	{
+		margin-top: var(--headerHeight);
 		/*background-color: orange;*/
 
 		height: var(--frameHeight);
@@ -254,7 +255,12 @@ header
 	height: var(--headerHeight);
 	width: 100vw;
 
+	position: fixed;
+	top: 0;
+	left: 0;
 	display: flex;
+
+	z-index: 100;
 }
 
 	header > div
