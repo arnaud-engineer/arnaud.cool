@@ -18,7 +18,7 @@
 
 @keyframes sleepy {
   0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
+  50% { transform: scale(1.03); }
   100% { transform: scale(1); }
 }
 
@@ -154,7 +154,7 @@ body
 
 				cursor: pointer;
 
-				/*background-color: red;*/
+				/*background-color: orange;*/
 			}
 
 
@@ -171,6 +171,14 @@ body
 				width: 20%; height: 20%;
 			}
 
+			main #myOffice img#sticker
+			{
+				position: absolute;
+				top: 15%; left: 65.5%;
+				width: 7%; height: 12%;
+			}
+
+
 			main #myOffice img#switch
 			{
 				top: 40%; left: 5%;
@@ -182,8 +190,8 @@ body
 
 			main #myOffice img#shelf
 			{
-				top: 8%; left: 67%;
-				width: 38%; height: 38%;
+				top: 8%; left: 73%;
+				width: auto; height: 38%;
 				cursor: default;
 			}
 
@@ -195,8 +203,8 @@ body
 
 				main #myOffice img#vega
 				{
-					top: 1%; left: 75%;
-					width: 18%; height: 18%;
+					top: 1%; left: 76%;
+					width: auto; height: 18%;
 
 					cursor: grab;
 
@@ -235,6 +243,7 @@ body
 			{
 				top: 15%; left: 35%;
 				width: auto; height: 46%;
+				cursor: default;
 			}
 
 				main #myOffice img#cursor
@@ -243,6 +252,12 @@ body
 					width: auto; height: 1.5%;
 
 					z-index: 9;
+				}
+
+				#monitor-background, 
+				#monitor-display
+				{
+					filter: saturate(80%);
 				}
 
 				#monitor-background
@@ -272,15 +287,15 @@ body
 
 			main #myOffice img#macbook
 			{
-				top: 39%; left: 13%;
-				width: 26%; height: 26%;
+				top: 39%; left: 16%;
+				width: auto; height: 26%;
 			}
 
 				#macbook_background
 				{
 					position: absolute;
 					z-index: 9;
-					top: 39.25%; left: 18.3%;
+					top: 39.5%; left: 18.1%;
 					width: 15.6%; height: 17%;
 					background-color: black;
 				}
@@ -301,6 +316,33 @@ body
 				width: auto; height: 15%;
 			}
 
+
+
+			main #myOffice img#notepad
+			{
+				top: 68%; left: 18%;
+				width: auto; height: 22%;
+
+				cursor: default;
+				/*cursor: grab;*/
+			}
+
+				canvas {
+					position: absolute;
+					top: 71%; left: 20.5%;
+					width: 9.5%; height: 18%;
+
+					z-index: 11;
+
+					background-color: transparent; /* transparent */
+					border: none;
+
+					cursor: url("rsrc/img/cursor-pen-16.png"), crosshair;
+				}
+
+
+
+
 			main #myOffice img#tarzanne
 			{
 				top: 33%; left: 66%;
@@ -315,7 +357,8 @@ body
 				main #myOffice #macbook:hover + video,
 				main #myOffice #macbook:hover + #macbook_background,
 				main #myOffice img#ruler:hover,
-				main #myOffice img#tarzanne:hover
+				main #myOffice img#tarzanne:hover,
+				main #myOffice img#sticker:hover
 				{
 					transform: scale(1.05);
 					/*opacity: .9;*/
@@ -344,7 +387,7 @@ body
 
 			main #myOffice img#jacquouille,
 			main #myOffice img#bulle
-			{ transform: translateY(200%); }
+			{ transform: translateY(200%); z-index: 999; }
 
 			main #myOffice img#jacquouille.displayed,
 			main #myOffice img#bulle.displayed/*.displayed*/
@@ -398,7 +441,7 @@ header
 				/*width: 100%;*/
 				margin: calc(var(--headerHeight) * .1);
 
-				vertical-align: middle;
+				vertical-align: top;
 			}
 
 	header button

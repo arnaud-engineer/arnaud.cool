@@ -262,8 +262,106 @@ document.addEventListener('DOMContentLoaded', function(event)
 	// scroll directly to bottom for mobile browsers
 	window.scrollTo(0,document.body.scrollHeight);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// Un booléen qui, lorsqu'il est vrai, indique que le déplacement de
+	// la souris entraîne un dessin sur le canevas
+	let isDrawing = false;
+	let x = 0;
+	let y = 0;
+
+	const myPics = document.getElementById('myPics');
+	const context = myPics.getContext('2d');
+
+	// On récupère le décalage du canevas en x et y par rapport aux bords
+	// de la page
+	var rect = myPics.getBoundingClientRect();
+
+	// On ajoute les gestionnaires d'évènements pour mousedown, mousemove
+	// et mouseup
+	myPics.addEventListener('mousedown', e => {
+		rect = myPics.getBoundingClientRect();
+		x = e.clientX - rect.left;
+		y = e.clientY - rect.top;
+		isDrawing = true;
+	});
+
+	myPics.addEventListener('mousemove', e => {
+		if (isDrawing === true) {
+			rect = myPics.getBoundingClientRect();
+			drawLine(context, x, y, e.clientX - rect.left, e.clientY - rect.top);
+			x = e.clientX - rect.left;
+			y = e.clientY - rect.top;
+		}
+	});
+
+
+
+
+
+	myPics.addEventListener('mouseup', e => {
+		if (isDrawing === true) {
+			rect = myPics.getBoundingClientRect();
+			drawLine(context, x, y, e.clientX - rect.left, e.clientY - rect.top);
+			x = 0;
+			y = 0;
+			isDrawing = false;
+		}
+	});
+
+	myPics.addEventListener('mouseleave', e => {
+		if (isDrawing === true) {
+			rect = myPics.getBoundingClientRect();
+			drawLine(context, x, y, e.clientX - rect.left, e.clientY - rect.top);
+			x = 0;
+			y = 0;
+			isDrawing = false;
+		}
+	});
+
+	/* mouseleave : */
+
+	function drawLine(context, x1, y1, x2, y2) {
+		context.beginPath();
+		context.strokeStyle = 'black';
+		context.lineWidth = 2;
+		context.moveTo(x1, y1);
+		context.lineTo(x2, y2);
+		context.stroke();
+		context.closePath();
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 	initYT();
 
 
 	//onmousemove = function(e){console.log("mouse location:", e.clientX, e.clientY)};
 });
+
+
+
+
+
+
+
