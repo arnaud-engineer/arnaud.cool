@@ -4,6 +4,8 @@
 
 	var lightOn = true;
 
+	var isCatPurring = false;
+
 	/*  ----------------------------------------
 		 SITE
 		---------------------------------------- */
@@ -149,6 +151,87 @@ function hideFrame(origin, site)
 
 		}
 
+	/*  ----------------------------------------
+		 VEGA
+		---------------------------------------- */
+
+
+
+		function catPurring()
+		{
+			if(isCatPurring === false) {
+				document.getElementById("cat-purring").play();
+				isCatPurring = true;
+			}
+			else {
+				document.getElementById("cat-purring").pause();
+				isCatPurring = false;
+			}
+		}
+
+    /* -----------------------------
+        YOUTUBE PLAYER LOADING
+       ----------------------------- */
+
+    //YouTube player required variables
+    var player;
+    var tag;
+    var firstScriptTag;
+    var num;
+
+
+        // FUNCTION TO CALL FOR PLAYER INITIALISATION
+        function initYT()
+        {
+            // SRC : https://developers.google.com/youtube/iframe_api_reference#Getting_Started
+
+            // Loading of the IFrame Player API code (asynchronous)
+            tag = document.createElement('script');
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // Call of the YouTube API
+            onYouTubeIframeAPIReady();
+        }
+
+        // CALL THE YOUTUBE API TO GET A PLAYER
+        function onYouTubeIframeAPIReady()
+        {
+            // Instanciation of the player
+            player = new YT.Player('player', {
+                height: '100%',
+                width: '100%',
+                playerVars: {
+                    listType: 'playlist',
+                    list: 'PL_CgzUyArZLHJQvhs_Q1kF5UcFIfoo4fN',
+                    index: 0,
+                    autoplay: 0,
+                    //encrypted-media,
+                }
+            });
+            //player.setShuffle(true);
+            player.setPlaybackQuality("small");
+        }
+
+
+        var isPlayingRadio = false;
+        function playPause()
+        {
+        	if(isPlayingRadio === false) {
+        		player.playVideo();
+        		isPlayingRadio = true;
+        		document.getElementById("radio").classList.add("playing");
+        	}
+        	else {
+        		player.pauseVideo();
+        		isPlayingRadio = false;
+        		document.getElementById("radio").classList.remove("playing");
+        	}
+        }
+
+
 /*  =========================================================================
 	 DEMO
 	========================================================================= */
@@ -163,6 +246,24 @@ function hideFrame(origin, site)
 
 document.addEventListener('DOMContentLoaded', function(event)
 {
+	//let office = document.getElementById("myOffice");
+	document.addEventListener('mousemove', e => {
+		let cursorX = e.clientX / window.innerWidth;
+		let cursorY = e.clientY / window.innerHeight;
+		//console.log("mouse location:", e.clientX / window.innerWidth, e.clientY / window.innerHeight);
+
+		// 37% -> 62.4% (25.4% freedom)
+		document.getElementById("cursor").style.left = (37 + (cursorX * 100 / 4)) + "%";
+		// 17% -> 42.5% (25.5% freedom)
+		document.getElementById("cursor").style.top = (17 + (cursorY * 100 / 4)) + "%";
+	});
+
+
 	// scroll directly to bottom for mobile browsers
 	window.scrollTo(0,document.body.scrollHeight);
+
+	initYT();
+
+
+	//onmousemove = function(e){console.log("mouse location:", e.clientX, e.clientY)};
 });
