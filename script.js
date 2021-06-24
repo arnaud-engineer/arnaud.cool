@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function(event)
 
 
 	// scroll directly to bottom for mobile browsers
-	window.scrollTo(0,document.body.scrollHeight);
+	//window.scrollTo(0,document.body.scrollHeight);
 
 
 
