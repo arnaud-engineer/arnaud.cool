@@ -559,6 +559,7 @@ header
 	z-index: -999999999;
 	opacity: 0;
 	width: 0; height: 0;
+	overflow: hidden;
 
 }
 
