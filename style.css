@@ -220,8 +220,8 @@ body
 
 			main #myOffice img#desk
 			{
-				top: 32%; left: 2.5%;
-				width: 95%; height: 95%;
+				bottom: -8.5%; left: 2.5%;
+				width: 95%; height: auto;
 				cursor: default;
 			}
 
