@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function(event)
 
 
 
-
+/*
 	// Un booléen qui, lorsqu'il est vrai, indique que le déplacement de
 	// la souris entraîne un dessin sur le canevas
 	let isDrawing = false;
@@ -338,7 +338,6 @@ document.addEventListener('DOMContentLoaded', function(event)
 		}
 	});
 
-	/* mouseleave : */
 
 	function drawLine(context, x1, y1, x2, y2) {
 		context.beginPath();
@@ -349,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function(event)
 		context.stroke();
 		context.closePath();
 	}
-
+*/
 
 
 
