@@ -52,7 +52,7 @@
 
 :root
 {
-	--headerHeight: min(80px);
+	--headerHeight: min(80px, 16vh);
 
 	/* automatic calculation */
 	--frameHeight: calc(100vh - var(--headerHeight)); /* cross product of height */
