@@ -183,36 +183,44 @@ function hideFrame(origin, site)
         // FUNCTION TO CALL FOR PLAYER INITIALISATION
         function initYT()
         {
-            // SRC : https://developers.google.com/youtube/iframe_api_reference#Getting_Started
+        	try
+        	{
+        		// SRC : https://developers.google.com/youtube/iframe_api_reference#Getting_Started
 
-            // Loading of the IFrame Player API code (asynchronous)
-            tag = document.createElement('script');
+	            // Loading of the IFrame Player API code (asynchronous)
+	            tag = document.createElement('script');
 
-            tag.src = "https://www.youtube.com/iframe_api";
-            firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	            tag.src = "https://www.youtube.com/iframe_api";
+	            firstScriptTag = document.getElementsByTagName('script')[0];
+	            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-            // Call of the YouTube API
-            onYouTubeIframeAPIReady();
+	            // Call of the YouTube API
+	            onYouTubeIframeAPIReady();
+        	}
+        	catch(e) { console.log(e);}
         }
 
         // CALL THE YOUTUBE API TO GET A PLAYER
         function onYouTubeIframeAPIReady()
         {
-            // Instanciation of the player
-            player = new YT.Player('player', {
-                height: '100%',
-                width: '100%',
-                playerVars: {
-                    listType: 'playlist',
-                    list: 'PL_CgzUyArZLHJQvhs_Q1kF5UcFIfoo4fN',
-                    index: 0,
-                    autoplay: 0,
-                    //encrypted-media,
-                }
-            });
-            //player.setShuffle(true);
-            player.setPlaybackQuality("small");
+        	try
+        	{
+        		// Instanciation of the player
+	            player = new YT.Player('player', {
+	                height: '100%',
+	                width: '100%',
+	                playerVars: {
+	                    listType: 'playlist',
+	                    list: 'PL_CgzUyArZLHJQvhs_Q1kF5UcFIfoo4fN',
+	                    index: 0,
+	                    autoplay: 0,
+	                    //encrypted-media,
+	                }
+	            });
+	            //player.setShuffle(true);
+	            player.setPlaybackQuality("small");
+        	}
+        	catch(e) { console.log(e); }
         }
 
 
