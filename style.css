@@ -94,7 +94,6 @@ body
 			width: var(--frameWidth);
 
 			margin-left: var(--frameMargin);
-			/*margin-left: var(--frameMargin);*/
 			position: absolute;
 
 			overflow: hidden;
@@ -556,6 +555,8 @@ header
 
 #hiddenMedia
 {
+	position: absolute;
+	top: 0; left: 0;
 	z-index: -999999999;
 	opacity: 0;
 	width: 0; height: 0;
