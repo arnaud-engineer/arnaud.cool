@@ -678,13 +678,13 @@ header
 
 	overflow-y: auto;
 
-	transform: translateY(100%);
+	transform: translateX(100%);
 	transition: all .4s ease;
 }
 
 	#menu.displayed
 	{
-		transform: translateY(0%);
+		transform: translateX(0%);
 	}	
 
 
