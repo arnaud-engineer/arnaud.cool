@@ -364,13 +364,16 @@ document.addEventListener('DOMContentLoaded', function(event)
 	initYT();
 
 	// GitHub Pages awfull fix attempt
+	document.getElementById("myOffice").style.height = "0px";
 	document.getElementById("myOffice").style.height = "var(--frameHeight)";
-	document.getElementById("myOffice").style.overflow = "auto";
-	document.getElementById("myOffice").style.overflow = "hidden";
+	//document.getElementById("myOffice").style.overflow = "auto";
+	//document.getElementById("myOffice").style.overflow = "hidden";
 
 	setTimeout(() => {
-		document.getElementById("myOffice").style.overflow = "auto";
-		document.getElementById("myOffice").style.overflow = "hidden";
+		//document.getElementById("myOffice").style.overflow = "auto";
+		//document.getElementById("myOffice").style.overflow = "hidden";
+		document.getElementById("myOffice").style.height = "0px";
+		document.getElementById("myOffice").style.height = "var(--frameHeight)";
 	}, 10000);
 
 	//onmousemove = function(e){console.log("mouse location:", e.clientX, e.clientY)};
