@@ -366,6 +366,9 @@ document.addEventListener('DOMContentLoaded', function(event)
 	// GitHub Pages awfull fix attempt
 	document.getElementById("myOffice").style.height = "var(--frameHeight)";
 
+	setTimeout(() => {
+		document.getElementById("myOffice").style.height = "var(--frameHeight)";
+	}, 10000);
 
 	//onmousemove = function(e){console.log("mouse location:", e.clientX, e.clientY)};
 });
