@@ -678,7 +678,7 @@ header
 
 	overflow-y: auto;
 
-	transform: translateY(200%);
+	transform: translateY(100%);
 	transition: all .4s ease;
 }
 
