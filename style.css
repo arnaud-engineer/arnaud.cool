@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 @keyframes shake {
@@ -48,6 +49,8 @@
 
 
 
+=======
+>>>>>>> parent of 8679d2b (still prototyping)
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root
@@ -153,7 +156,10 @@ body
 
 				cursor: pointer;
 
+<<<<<<< HEAD
 				/*background-color: orange;*/
+=======
+>>>>>>> parent of 8679d2b (still prototyping)
 			}
 
 
@@ -170,6 +176,7 @@ body
 				width: 20%; height: 20%;
 			}
 
+<<<<<<< HEAD
 			main #myOffice img#sticker
 			{
 				position: absolute;
@@ -211,6 +218,20 @@ body
 					animation-iteration-count: infinite;
 				}
 
+=======
+			main #myOffice img#shelf
+			{
+				top: 7%; left: 67%;
+				width: 38%; height: 38%;
+				cursor: default;
+			}
+
+			main #myOffice img#switch
+			{
+				top: 40%; left: 5%;
+				width: 9%; height: 9%;
+			}
+>>>>>>> parent of 8679d2b (still prototyping)
 
 
 
@@ -228,18 +249,19 @@ body
 
 			main #myOffice img#keyboard
 			{
-				top: 77%; left: 37%;
-				width: 26%; height: auto;
+				top: 70%; left: 37%;
+				width: 26%; height: 25%;
 			}
 
 			main #myOffice img#mouse
 			{
 				top: 78%; left: 67%;
-				width: auto; height: 8%;
+				width: 8%; height: 8%;
 			}
 
 			main #myOffice img#monitor
 			{
+<<<<<<< HEAD
 				top: 15%; left: 35%;
 				width: auto; height: 46%;
 				cursor: default;
@@ -283,6 +305,12 @@ body
 					z-index: 8;
 				}
 
+=======
+				top: 15%; left: 27%;
+				width: 46%; height: 46%;
+			}
+
+>>>>>>> parent of 8679d2b (still prototyping)
 
 			main #myOffice img#macbook
 			{
@@ -311,8 +339,8 @@ body
 
 			main #myOffice img#ruler
 			{
-				top: 64%; left: 33%;
-				width: auto; height: 15%;
+				top: 64%; left: 30%;
+				width: 15%; height: 15%;
 			}
 
 
@@ -344,14 +372,15 @@ body
 
 			main #myOffice img#tarzanne
 			{
-				top: 33%; left: 66%;
-				width: auto; height: 26%;
+				top: 33%; left: 57%;
+				width: 26%; height: 26%;
 			}
 
 
 				main #myOffice img#diploma:hover,
 				main #myOffice img#keyboard:hover,
 				main #myOffice img#mouse:hover,
+				main #myOffice img#monitor:hover,
 				main #myOffice #macbook:hover,
 				main #myOffice #macbook:hover + video,
 				main #myOffice #macbook:hover + #macbook_background,
@@ -559,6 +588,7 @@ header
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -588,6 +618,8 @@ header
 
 
 
+=======
+>>>>>>> parent of 8679d2b (still prototyping)
 	body.night
 	{
 		background-color: #1C1C1C;
