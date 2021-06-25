@@ -254,13 +254,6 @@ function hideFrame(origin, site)
 
 document.addEventListener('DOMContentLoaded', function(event)
 {
-
-
-
-
-
-
-	/*
 	//let office = document.getElementById("myOffice");
 	document.addEventListener('mousemove', e => {
 		let cursorX = e.clientX / window.innerWidth;
@@ -272,8 +265,6 @@ document.addEventListener('DOMContentLoaded', function(event)
 		// 17% -> 42.5% (25.5% freedom)
 		document.getElementById("cursor").style.top = (17 + (cursorY * 100 / 4)) + "%";
 	});
-*/
-
 
 
 	// scroll directly to bottom for mobile browsers
@@ -291,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function(event)
 
 
 
-/*
+
 	// Un booléen qui, lorsqu'il est vrai, indique que le déplacement de
 	// la souris entraîne un dessin sur le canevas
 	let isDrawing = false;
@@ -347,6 +338,7 @@ document.addEventListener('DOMContentLoaded', function(event)
 		}
 	});
 
+	/* mouseleave : */
 
 	function drawLine(context, x1, y1, x2, y2) {
 		context.beginPath();
@@ -357,7 +349,6 @@ document.addEventListener('DOMContentLoaded', function(event)
 		context.stroke();
 		context.closePath();
 	}
-*/
 
 
 
@@ -369,7 +360,8 @@ document.addEventListener('DOMContentLoaded', function(event)
 
 
 
-	//initYT();
+
+	initYT();
 
 
 	//onmousemove = function(e){console.log("mouse location:", e.clientX, e.clientY)};
