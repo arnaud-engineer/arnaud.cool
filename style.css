@@ -664,10 +664,10 @@ header
 	background-color: #ffffed;
 
 	position: absolute;
-	top: var(--headerHeight);
+	top: 0;
 	left: 0;
 
-	height: var(--frameHeight);
+	height: 100%;
 	width: 100vw;
 
 	padding-top: calc(2 * var(--headerHeight) / 3);
