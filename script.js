@@ -254,6 +254,13 @@ function hideFrame(origin, site)
 
 document.addEventListener('DOMContentLoaded', function(event)
 {
+
+
+
+
+
+
+	/*
 	//let office = document.getElementById("myOffice");
 	document.addEventListener('mousemove', e => {
 		let cursorX = e.clientX / window.innerWidth;
@@ -265,6 +272,8 @@ document.addEventListener('DOMContentLoaded', function(event)
 		// 17% -> 42.5% (25.5% freedom)
 		document.getElementById("cursor").style.top = (17 + (cursorY * 100 / 4)) + "%";
 	});
+*/
+
 
 
 	// scroll directly to bottom for mobile browsers
