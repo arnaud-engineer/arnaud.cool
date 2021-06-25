@@ -361,7 +361,7 @@ document.addEventListener('DOMContentLoaded', function(event)
 
 
 
-	initYT();
+	//initYT();
 
 
 	//onmousemove = function(e){console.log("mouse location:", e.clientX, e.clientY)};
