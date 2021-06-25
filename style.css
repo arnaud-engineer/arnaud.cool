@@ -79,7 +79,7 @@ body
 		width: 100vw;
 
 		overflow-x: auto;
-		overflow-y: auto;
+		overflow-y: hidden;
 
 		position: relative;
 	}
@@ -366,30 +366,39 @@ body
 
 
 
-			main #myOffice img#jacquouille
+
+
+
+			main img#jacquouille
 			{
-				top: 56%; left: 2%;
-				width: 45%; height: 45%;
+				position: fixed;
+				bottom: -1%; left: 2%;
+				width: auto; height: 45%;
 				cursor: default;
 
 				transition: all .4s ease;
+
+				z-index: 998;
 			}
 
-			main #myOffice img#bulle
+			main img#bulle
 			{
-				top: 45%; left: 26%;
+				position: fixed;
+				bottom: 20%; left: 16%;
 				width: 34%; height: 34%;
 				cursor: default;
 
 				transition: all .7s ease;
+
+				z-index: 999;
 			}
 
-			main #myOffice img#jacquouille,
-			main #myOffice img#bulle
+			main img#jacquouille,
+			main img#bulle
 			{ transform: translateY(200%); z-index: 999; }
 
-			main #myOffice img#jacquouille.displayed,
-			main #myOffice img#bulle.displayed/*.displayed*/
+			main img#jacquouille.displayed,
+			main img#bulle.displayed/*.displayed*/
 			{
 				transform: translateY(0%);
 			}
@@ -555,7 +564,7 @@ header
 
 #hiddenMedia
 {
-	position: absolute;
+	position: fixed;
 	top: 0; left: 0;
 	z-index: -999999999;
 	opacity: 0;
