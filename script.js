@@ -1,3 +1,26 @@
+
+
+/*  =========================================================================
+	 MENU
+	========================================================================= */
+
+	var isMenuOn = false;
+
+	function menuOnOff()
+	{
+		if(isMenuOn === false) {
+			document.getElementById("menu").classList.add("displayed");
+			isMenuOn = true;
+		}
+		else {
+			document.getElementById("menu").classList.remove("displayed");
+			isMenuOn = false;
+		}
+	}
+
+
+
+
 /*  =========================================================================
 	 OBJECT MODEL
 	========================================================================= */
@@ -31,7 +54,7 @@
 				"diploma",
 				"arnaud.engineer",
 				"rsrc/img/logos/arnaud-engineer.svg",
-				"Besoin d'un ingénieur couteau-suisse ? D'un développeur web ?<br/><br/>Alors n'hésitez pas à me rendre visite sur mon site professionnel où vous pourrez voir entre autres l'étendu de mes compétences, mon cursus, mon CV et même me contacter.",
+				"besoin d'un ingénieur couteau-suisse ? d'un développeur web ?<br/><br/>Alors n'hésitez pas à me rendre visite sur mon site professionnel où vous pourrez voir entre autres l'étendu de mes compétences, mon cursus, mon CV et meme me contacter.",
 				"/img",
 				"https://arnaud.engineer"
 			),
@@ -49,7 +72,7 @@
 				"macbook",
 				"JoliTube",
 				"rsrc/img/logos/jolitube.png",
-				"<br/>La télévision, pour ceux qui préfèrent YouTube.<br/><br/>Sur JoliTube, retrouvez une cinquantaine de chaînes thématiques pour toutes les envies : films, séries, comédie, musique, ambiance, curiosités étranges de fin fond de catalogue ...<br/><br/>JoliTube, c'est aussi l'aboutissement de 15 ans de visionnage (trop ?) intensif de YouTube, Dailymotion, Vimeo, ... et un moyen de me persuader que je n'y ai pas perdu bêtement mon temps ... en faisant perdre celui des autres",
+				"<br/>\"La télévision, pour ceux qui préfèrent youtube\"<br/><br/>sur JoliTube, retrouvez une cinquantaine de chaînes thématiques pour toutes les envies : films, séries, comédie, musique, ambiance, curiosités étranges de fin fond de catalogue ...<br/><br/>JoliTube, c'est aussi l'aboutissement de quinze ans de visionnage (trop ?) intensif de youtube, dailymotion, vimeo, ... et un moyen de me persuader que je n'y ai pas perdu mon temps ... en faisant perdre celui des autres",
 				"/img",
 				"https://jolitube.com"
 			),

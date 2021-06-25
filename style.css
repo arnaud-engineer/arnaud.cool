@@ -1,3 +1,22 @@
+@font-face {
+  font-family: 'arnaud-cool';
+  src: url(rsrc/fonts/arnaud-cool.eot);
+  src: url(rsrc/fonts/arnaud-cool.eot?#iefix) format('embedded-opentype'),
+       url(rsrc/fonts/arnaud-cool.svg#arnaud-cool) format('svg'),
+       url(rsrc/fonts/arnaud-cool.ttf) format('truetype'),
+       url(rsrc/fonts/arnaud-cool.woff) format('woff'),
+       url(rsrc/fonts/arnaud-cool.woff2) format('woff2');
+}
+
+
+
+
+
+
+
+
+
+
 
 
 @keyframes shake {
@@ -75,6 +94,8 @@ body
 
 	cursor: var(--defaultCursor);
 	/*cursor: url("rsrc/cursors/stupid-pikachu.png"), default !important;*/
+
+	font-family: "arnaud-cool", "comic sans ms", serif;
 }
 
 	main
@@ -384,7 +405,8 @@ body
 			{
 				position: fixed;
 				bottom: -1%; left: 2%;
-				width: max(60%, 380px); height: auto;
+				width: max(40%, 380px);
+				height: auto; max-height: 60%;
 				cursor: var(--defaultCursor);
 
 				transition: all .4s ease;
@@ -397,8 +419,9 @@ body
 			main img#bulle
 			{
 				position: fixed;
-				bottom: 20%; left: max(40%, 260px);
-				width: 34%; height: auto;
+				bottom: 20%; left: max(26%, 260px);
+				width: 34%;
+				height: auto; max-height: 40%;
 				cursor: var(--defaultCursor);
 
 				transition: all .7s ease;
@@ -623,3 +646,130 @@ header
 
 
 	/* TODO :; filter: drop-shadow(16px 16px 20px red); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+#menu
+{
+	background-color: #ffffed;
+
+	position: absolute;
+	top: var(--headerHeight);
+	left: 0;
+
+	height: var(--frameHeight);
+	width: 100vw;
+
+	padding-top: calc(2 * var(--headerHeight) / 3);
+	padding-left: calc(var(--frameMargin) + max(12px, 10vw));
+	padding-right: calc(var(--frameMargin) + max(12px, 10vw));
+
+	z-index: 99999999999;
+
+	overflow-y: auto;
+
+	transform: translateY(200%);
+	transition: all .4s ease;
+}
+
+	#menu.displayed
+	{
+		transform: translateY(0%);
+	}	
+
+
+		#menu h1
+		{
+			font-size: 56px;
+		}
+
+		#menu p, ul
+		{
+			font-size: 24px;
+		}
+
+		#menu .credits
+		{
+			padding-top: calc(2 * var(--headerHeight) / 3);
+
+			font-size: 18px;
+			text-align: center;
+		}
+
+		#menu a
+		{
+			cursor: url("rsrc/img/cursor-pointer.png"), pointer;
+			text-decoration: none;
+		}
+
+
+
+
+
+
+		.row
+		{
+			padding-top: calc(var(--headerHeight) / 3);
+
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 10px;
+		}
+
+
+		.column-1, .column-2, .column-3
+		{
+			padding-top: calc(var(--headerHeight) / 3);
+		}
+
+		.column-1
+		{
+			grid-column: 1 / 3;
+			grid-row: 1;
+		}
+
+		.column-2
+		{
+			grid-column: 2 / 3;
+			grid-row: 1;
+		}
+
+		.column-3
+		{
+			grid-column: 3 / 3;
+			grid-row: 1;
+		}
+
+			@media (max-width: 768px) {
+				/*.row { grid-template-columns: repeat(2, 1fr); }*/
+				.row { grid-template-columns: repeat(2, 1fr); }
+				.column-1 { grid-column: 1 / 2; grid-row: 1; }
+				.column-2 { grid-column: 2 / 2; grid-row: 1; }
+				.column-3 { grid-column: 1 / 2; grid-row: 2; }
+			}
+
+			@media (max-width: 576px) {
+				/*.row { grid-template-columns: repeat(1, 1fr); }*/
+				.row { grid-template-columns: repeat(1, 1fr); }
+				.column-1 { grid-column: 1 / 1; grid-row: 1; }
+				.column-2 { grid-column: 1 / 1; grid-row: 2; }
+				.column-3 { grid-column: 1 / 1; grid-row: 3; }
+			}
+
+
+
+
+
+
+
+

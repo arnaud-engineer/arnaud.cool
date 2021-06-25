@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'arnaud-cool';
+  src: url(./arnaud-cool.eot);
+  src: url(./arnaud-cool.eot?#iefix) format('embedded-opentype'),
+       url(./arnaud-cool.svg#arnaud-cool) format('svg'),
+       url(./arnaud-cool.ttf) format('truetype'),
+       url(./arnaud-cool.woff) format('woff'),
+       url(./arnaud-cool.woff2) format('woff2');
+}
