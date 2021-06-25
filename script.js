@@ -4,6 +4,8 @@
 
 	var lightOn = true;
 
+	var isCatPurring = false;
+
 	/*  ----------------------------------------
 		 SITE
 		---------------------------------------- */
@@ -149,7 +151,6 @@ function hideFrame(origin, site)
 
 		}
 
-<<<<<<< HEAD
 	/*  ----------------------------------------
 		 VEGA
 		---------------------------------------- */
@@ -239,8 +240,6 @@ function hideFrame(origin, site)
         }
 
 
-=======
->>>>>>> parent of 8679d2b (still prototyping)
 /*  =========================================================================
 	 DEMO
 	========================================================================= */
@@ -255,8 +254,20 @@ function hideFrame(origin, site)
 
 document.addEventListener('DOMContentLoaded', function(event)
 {
+	//let office = document.getElementById("myOffice");
+	document.addEventListener('mousemove', e => {
+		let cursorX = e.clientX / window.innerWidth;
+		let cursorY = e.clientY / window.innerHeight;
+		//console.log("mouse location:", e.clientX / window.innerWidth, e.clientY / window.innerHeight);
+
+		// 37% -> 62.4% (25.4% freedom)
+		document.getElementById("cursor").style.left = (37 + (cursorX * 100 / 4)) + "%";
+		// 17% -> 42.5% (25.5% freedom)
+		document.getElementById("cursor").style.top = (17 + (cursorY * 100 / 4)) + "%";
+	});
+
+
 	// scroll directly to bottom for mobile browsers
-<<<<<<< HEAD
 	//window.scrollTo(0,document.body.scrollHeight);
 
 
@@ -362,7 +373,3 @@ document.addEventListener('DOMContentLoaded', function(event)
 
 
 
-=======
-	window.scrollTo(0,document.body.scrollHeight);
-});
->>>>>>> parent of 8679d2b (still prototyping)
