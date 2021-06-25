@@ -68,6 +68,8 @@ body
 {
 	overflow: hidden;
 	background-color: #ffffed;
+
+	cursor: url("rsrc/img/cursor-default.png"), default;
 }
 
 	main
@@ -152,7 +154,7 @@ body
 				transform-origin: center;
 				transition: all .3s ease;
 
-				cursor: pointer;
+				cursor: url("rsrc/img/cursor-zoom.png"), zoom-in;
 
 				/*background-color: orange;*/
 			}
@@ -183,6 +185,7 @@ body
 			{
 				top: 40%; left: 5%;
 				width: 9%; height: 9%;
+				cursor: url("rsrc/img/cursor-pointer.png"), pointer;
 			}
 
 
@@ -192,13 +195,14 @@ body
 			{
 				top: 8%; left: 73%;
 				width: auto; height: 38%;
-				cursor: default;
+				cursor: url("rsrc/img/cursor-default.png"), default;
 			}
 
 				main #myOffice img#radio
 				{
 					top: 23%; left: 77%;
 					width: 12%; height: 18%;
+					cursor: url("rsrc/img/cursor-pointer.png"), pointer;
 				}
 
 				main #myOffice img#vega
@@ -206,7 +210,7 @@ body
 					top: 1%; left: 76%;
 					width: auto; height: 18%;
 
-					cursor: grab;
+					cursor: url("rsrc/img/cursor-grab.png"), grab;
 
 					animation: sleepy 3.0s;
 					animation-iteration-count: infinite;
@@ -223,7 +227,7 @@ body
 			{
 				bottom: 0%; left: 2.5%;
 				width: 95%; height: auto;
-				cursor: default;
+				cursor: url("rsrc/img/cursor-default.png"), default;
 			}
 
 
@@ -243,7 +247,7 @@ body
 			{
 				top: 14%; left: 35%;
 				width: auto; height: 46%;
-				cursor: default;
+				cursor: url("rsrc/img/cursor-default.png"), default;
 			}
 
 				main #myOffice img#cursor
@@ -323,7 +327,7 @@ body
 				top: 66%; left: 18%;
 				width: auto; height: 22%;
 
-				cursor: default;
+				cursor: url("rsrc/img/cursor-default.png"), default;
 				/*cursor: grab;*/
 			}
 
@@ -337,7 +341,7 @@ body
 					background-color: transparent; /* transparent */
 					border: none;
 
-					cursor: url("rsrc/img/cursor-pen-16.png"), crosshair;
+					cursor: url("rsrc/img/cursor-pen.png"), crosshair;
 				}
 
 
@@ -374,8 +378,8 @@ body
 			{
 				position: fixed;
 				bottom: -1%; left: 2%;
-				width: auto; height: 45%;
-				cursor: default;
+				width: max(45%, 380px); height: auto;
+				cursor: url("rsrc/img/cursor-default.png"), default;
 
 				transition: all .4s ease;
 
@@ -385,9 +389,9 @@ body
 			main img#bulle
 			{
 				position: fixed;
-				bottom: 20%; left: 16%;
-				width: 34%; height: 34%;
-				cursor: default;
+				bottom: 20%; left: max(30%, 260px);
+				width: 34%; height: auto;
+				cursor: url("rsrc/img/cursor-default.png"), default;
 
 				transition: all .7s ease;
 
@@ -396,7 +400,7 @@ body
 
 			main img#jacquouille,
 			main img#bulle
-			{ transform: translateY(200%); z-index: 999; }
+			{ transform: translateY(250%); z-index: 999; }
 
 			main img#jacquouille.displayed,
 			main img#bulle.displayed/*.displayed*/
@@ -439,6 +443,8 @@ header
 
 			transition: all .2s ease;
 			transform-origin: left;
+
+			cursor: url("rsrc/img/cursor-pointer.png"), pointer;
 		}
 
 			header h1 a:hover
@@ -466,6 +472,8 @@ header
     	-moz-appearance: none;
     	border: none;
     	background-color: transparent;
+
+    	cursor: url("rsrc/img/cursor-pointer.png"), pointer;
 	}
 
 		header button img
@@ -473,8 +481,6 @@ header
 			width: 100%;
 			height: 100%;
 			padding: 20%;
-
-			cursor: pointer;
 
 			transition: all .3s ease;
 		}
