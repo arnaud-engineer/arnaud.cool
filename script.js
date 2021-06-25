@@ -6,6 +6,8 @@
 
 	var isCatPurring = false;
 
+	var alreadyPickedCursors = [];
+
 	/*  ----------------------------------------
 		 SITE
 		---------------------------------------- */
@@ -167,6 +169,39 @@ function hideFrame(origin, site)
 				document.getElementById("cat-purring").pause();
 				isCatPurring = false;
 			}
+		}
+
+	/*  ----------------------------------------
+		 MOUSE
+		---------------------------------------- */
+
+		function getStupidCursor()
+		{
+			// PICK A CURSOR
+			let lStupidCursors = ["cursor-default", "stupid-shooter", "stupid-pig", "stupid-pikachu", "stupid-sonic", "stupid-saber"];
+
+
+			if (alreadyPickedCursors.length === lStupidCursors.length)
+				alreadyPickedCursors = [alreadyPickedCursors[alreadyPickedCursors.length - 1]];
+			let i = Math.floor(Math.random() * lStupidCursors.length);
+			while(alreadyPickedCursors.includes(i) || (alreadyPickedCursors.length === 0 && i === 0)) {
+				i = Math.floor(Math.random() * lStupidCursors.length);
+			}
+			alreadyPickedCursors.push(i);
+
+
+			let defaultCursorPath = "url('rsrc/cursors/" + lStupidCursors[i] + ".png'), default";
+			let onMouseCursorPath = "url('rsrc/cursors/" + lStupidCursors[i] + ".png'), pointer";
+			if(i === 0)
+				onMouseCursorPath = "url('rsrc/cursors/cursor-pointer.png'), pointer";
+
+
+			// UPDATE
+			let root = document.documentElement;
+			root.style.setProperty("--defaultCursor", defaultCursorPath);
+			root.style.setProperty("--onMouseCursor", onMouseCursorPath);
+			// MONITOR CURSOR
+			document.getElementById("cursor").setAttribute("src", "rsrc/cursors/" + lStupidCursors[i] + ".png");
 		}
 
     /* -----------------------------

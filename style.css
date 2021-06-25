@@ -59,6 +59,10 @@
 	--frameWidth: calc((16 * (100vh - var(--headerHeight))) / 9); /* (window width - frame width) / 2 */
 	--frameMargin: max((calc(100vw - var(--frameWidth)) / 2), 0vw);
 
+	/*--defaultCursor: url("rsrc/cursors/stupid-pikachu.png"), default;*/
+	--defaultCursor: url("rsrc/img/cursor-default.png"), default;
+	--onMouseCursor: url("rsrc/img/cursor-pointer.png"), pointer;
+
 	/*
 	--frameMargin: calc((100vw - var(--frameWidth)) / 2);
 	*/
@@ -69,7 +73,8 @@ body
 	overflow: hidden;
 	background-color: #ffffed;
 
-	cursor: url("rsrc/img/cursor-default.png"), default;
+	cursor: var(--defaultCursor);
+	/*cursor: url("rsrc/cursors/stupid-pikachu.png"), default !important;*/
 }
 
 	main
@@ -195,7 +200,7 @@ body
 			{
 				top: 8%; left: 73%;
 				width: auto; height: 38%;
-				cursor: url("rsrc/img/cursor-default.png"), default;
+				cursor: var(--defaultCursor);
 			}
 
 				main #myOffice img#radio
@@ -227,7 +232,7 @@ body
 			{
 				bottom: 0%; left: 2.5%;
 				width: 95%; height: auto;
-				cursor: url("rsrc/img/cursor-default.png"), default;
+				cursor: var(--defaultCursor);
 			}
 
 
@@ -241,13 +246,14 @@ body
 			{
 				top: 76%; left: 67%;
 				width: auto; height: 8%;
+				cursor: var(--onMouseCursor);
 			}
 
 			main #myOffice img#monitor
 			{
 				top: 14%; left: 35%;
 				width: auto; height: 46%;
-				cursor: url("rsrc/img/cursor-default.png"), default;
+				cursor: var(--defaultCursor);
 			}
 
 				main #myOffice img#cursor
@@ -327,7 +333,7 @@ body
 				top: 66%; left: 18%;
 				width: auto; height: 22%;
 
-				cursor: url("rsrc/img/cursor-default.png"), default;
+				cursor: var(--defaultCursor);
 				/*cursor: grab;*/
 			}
 
@@ -378,10 +384,12 @@ body
 			{
 				position: fixed;
 				bottom: -1%; left: 2%;
-				width: max(45%, 380px); height: auto;
-				cursor: url("rsrc/img/cursor-default.png"), default;
+				width: max(60%, 380px); height: auto;
+				cursor: var(--defaultCursor);
 
 				transition: all .4s ease;
+
+				opacity: 1;
 
 				z-index: 998;
 			}
@@ -389,18 +397,20 @@ body
 			main img#bulle
 			{
 				position: fixed;
-				bottom: 20%; left: max(30%, 260px);
+				bottom: 20%; left: max(40%, 260px);
 				width: 34%; height: auto;
-				cursor: url("rsrc/img/cursor-default.png"), default;
+				cursor: var(--defaultCursor);
 
 				transition: all .7s ease;
+
+				opacity: 1;
 
 				z-index: 999;
 			}
 
 			main img#jacquouille,
 			main img#bulle
-			{ transform: translateY(250%); z-index: 999; }
+			{ transform: translateY(250%); }
 
 			main img#jacquouille.displayed,
 			main img#bulle.displayed/*.displayed*/
