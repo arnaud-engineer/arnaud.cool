@@ -221,7 +221,7 @@ body
 
 			main #myOffice img#desk
 			{
-				bottom: -8.5%; left: 2.5%;
+				bottom: -1%; left: 2.5%;
 				width: 95%; height: auto;
 				cursor: default;
 			}
