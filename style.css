@@ -221,7 +221,7 @@ body
 
 			main #myOffice img#desk
 			{
-				bottom: -1%; left: 2.5%;
+				bottom: 0%; left: 2.5%;
 				width: 95%; height: auto;
 				cursor: default;
 			}
@@ -229,26 +229,26 @@ body
 
 			main #myOffice img#keyboard
 			{
-				top: 77%; left: 37%;
+				top: 75%; left: 37%;
 				width: 26%; height: auto;
 			}
 
 			main #myOffice img#mouse
 			{
-				top: 78%; left: 67%;
+				top: 76%; left: 67%;
 				width: auto; height: 8%;
 			}
 
 			main #myOffice img#monitor
 			{
-				top: 15%; left: 35%;
+				top: 14%; left: 35%;
 				width: auto; height: 46%;
 				cursor: default;
 			}
 
 				main #myOffice img#cursor
 				{
-					top: 17%; left: 37%;
+					top: 16%; left: 37%;
 					width: auto; height: 1.5%;
 
 					z-index: 9;
@@ -263,7 +263,7 @@ body
 				#monitor-background
 				{
 					position: absolute;
-					top: 16.2%; left: 35.9%;
+					top: 15.2%; left: 35.9%;
 					width: 27.3%; height: 27%;
 
 					border:none;
@@ -276,7 +276,7 @@ body
 				#monitor-display
 				{
 					position: absolute;
-					top: 17.35%; left: 37%;
+					top: 16.35%; left: 37%;
 					width: 25%; height: 25%;
 
 					border:none;
@@ -287,7 +287,7 @@ body
 
 			main #myOffice img#macbook
 			{
-				top: 39%; left: 16%;
+				top: 38%; left: 16%;
 				width: auto; height: 26%;
 			}
 
@@ -295,7 +295,7 @@ body
 				{
 					position: absolute;
 					z-index: 9;
-					top: 39.5%; left: 18.1%;
+					top: 38.5%; left: 18.1%;
 					width: 15.6%; height: 17%;
 					background-color: black;
 				}
@@ -303,7 +303,7 @@ body
 				main #myOffice video#jolitube
 				{
 					z-index: 9;
-					top: 40.25%; left: 18.5%;
+					top: 39.25%; left: 18.5%;
 					width: 15%; height: 15%;
 
 					/*border:5px black solid;
@@ -312,7 +312,7 @@ body
 
 			main #myOffice img#ruler
 			{
-				top: 64%; left: 33%;
+				top: 62%; left: 33%;
 				width: auto; height: 15%;
 			}
 
@@ -320,7 +320,7 @@ body
 
 			main #myOffice img#notepad
 			{
-				top: 68%; left: 18%;
+				top: 66%; left: 18%;
 				width: auto; height: 22%;
 
 				cursor: default;
@@ -329,7 +329,7 @@ body
 
 				canvas {
 					position: absolute;
-					top: 71%; left: 20.5%;
+					top: 69%; left: 20.5%;
 					width: 9.5%; height: 18%;
 
 					z-index: 11;
@@ -345,7 +345,7 @@ body
 
 			main #myOffice img#tarzanne
 			{
-				top: 33%; left: 66%;
+				top: 31%; left: 66%;
 				width: auto; height: 26%;
 			}
 

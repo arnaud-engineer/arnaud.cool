@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function(event)
 		// 37% -> 62.4% (25.4% freedom)
 		document.getElementById("cursor").style.left = (37 + (cursorX * 100 / 4)) + "%";
 		// 17% -> 42.5% (25.5% freedom)
-		document.getElementById("cursor").style.top = (17 + (cursorY * 100 / 4)) + "%";
+		document.getElementById("cursor").style.top = (15 + (cursorY * 100 / 4)) + "%";
 	});
 
 
