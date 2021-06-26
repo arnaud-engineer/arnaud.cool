@@ -673,7 +673,7 @@ header
 			background: no-repeat url("rsrc/img/paper-background.svg");
 
 
-			overflow: scroll;
+			overflow: auto;
 
 
 
