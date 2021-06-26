@@ -11,10 +11,14 @@
 		if(isMenuOn === false) {
 			document.getElementById("menu").classList.add("displayed");
 			isMenuOn = true;
+
+			document.getElementsByTagName("main")[0].style.overflow = "hidden";
 		}
 		else {
 			document.getElementById("menu").classList.remove("displayed");
 			isMenuOn = false;
+
+			document.getElementsByTagName("main")[0].style.overflow = "auto";
 		}
 	}
 

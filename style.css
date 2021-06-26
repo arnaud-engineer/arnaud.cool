@@ -663,11 +663,11 @@ header
 {
 	background-color: #ffffed;
 
-	position: absolute;
-	top: 0;
+	position: fixed;
+	top: var(--headerHeight);
 	left: 0;
 
-	height: 100%;
+	height: var(--frameHeight);
 	width: 100vw;
 
 	padding-top: calc(2 * var(--headerHeight) / 3);
