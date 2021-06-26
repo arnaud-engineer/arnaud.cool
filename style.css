@@ -9,7 +9,9 @@
 }
 
 
-
+/*
+filter: drop-shadow(16px 16px 20px red);
+*/
 
 
 
@@ -197,7 +199,12 @@ body
 			{
 				top: 10%; left: 7%;
 				width: 20%; height: 20%;
+
+				filter: drop-shadow(0px .75px 1.25px black);
 			}
+
+				.night main #myOffice img#diploma
+				{ filter: brightness(60%); }
 
 			main #myOffice img#sticker
 			{
@@ -206,13 +213,21 @@ body
 				width: 7%; height: 12%;
 			}
 
+				.night main #myOffice img#sticker
+				{ filter: brightness(60%); }
+
 
 			main #myOffice img#switch
 			{
 				top: 40%; left: 5%;
 				width: 9%; height: 9%;
 				cursor: url("rsrc/img/cursor-pointer.png"), pointer;
+
+				filter: drop-shadow(0px .75px 1.25px black);
 			}
+
+				.night main #myOffice img#switch
+				{ filter: brightness(60%); }
 
 
 
@@ -222,14 +237,24 @@ body
 				top: 8%; left: 73%;
 				width: auto; height: 38%;
 				cursor: var(--defaultCursor);
+
+				filter: drop-shadow(0px 6px 8px black);
 			}
+
+				.night main #myOffice img#shelf
+				{ filter: brightness(60%); }
 
 				main #myOffice img#radio
 				{
 					top: 23%; left: 77%;
 					width: 12%; height: 18%;
 					cursor: url("rsrc/img/cursor-pointer.png"), pointer;
+
+					filter: drop-shadow(0px .75px 1.25px black);
 				}
+
+					.night main #myOffice img#radio
+					{ filter: brightness(60%); }
 
 				main #myOffice img#vega
 				{
@@ -240,7 +265,12 @@ body
 
 					animation: sleepy 3.0s;
 					animation-iteration-count: infinite;
+
+					filter: drop-shadow(0px .75px 1.25px black);
 				}
+
+					.night main #myOffice img#vega
+					{ filter: brightness(60%); }
 
 
 
@@ -254,28 +284,47 @@ body
 				bottom: 0%; left: 2.5%;
 				width: 95%; height: auto;
 				cursor: var(--defaultCursor);
+
+				filter: drop-shadow(0px 6px 8px black);
 			}
+
+				.night main #myOffice img#desk
+				{ filter: brightness(60%); }
 
 
 			main #myOffice img#keyboard
 			{
 				top: 75%; left: 37%;
 				width: 26%; height: auto;
+
+				filter: drop-shadow(0px .75px 1.25px black);
 			}
+
+				.night main #myOffice img#keyboard
+				{ filter: brightness(60%); }
 
 			main #myOffice img#mouse
 			{
 				top: 76%; left: 67%;
 				width: auto; height: 8%;
 				cursor: var(--onMouseCursor);
+
+				filter: drop-shadow(0px .75px 1.25px black);
 			}
+
+				.night main #myOffice img#mouse
+				{ filter: brightness(60%); }
 
 			main #myOffice img#monitor
 			{
 				top: 14%; left: 35%;
 				width: auto; height: 46%;
 				cursor: var(--defaultCursor);
+
+				filter: drop-shadow(0px .75px 1.25px black);
 			}
+				.night main #myOffice img#monitor
+				{ filter: brightness(60%); }
 
 				main #myOffice img#cursor
 				{
@@ -283,6 +332,8 @@ body
 					width: auto; height: 1.5%;
 
 					z-index: 9;
+
+					filter: drop-shadow(0px .75px 1.25px black);
 				}
 
 				#monitor-background, 
@@ -320,7 +371,12 @@ body
 			{
 				top: 38%; left: 16%;
 				width: auto; height: 26%;
+
+				filter: drop-shadow(0px .75px 1.25px black);
 			}
+
+				.night main #myOffice img#macbook
+				{ filter: brightness(60%); }
 
 				#macbook_background
 				{
@@ -345,7 +401,12 @@ body
 			{
 				top: 62%; left: 33%;
 				width: auto; height: 15%;
+
+				filter: drop-shadow(0px .75px 1.25px black);
 			}
+
+				.night main #myOffice img#ruler
+				{ filter: brightness(60%); }
 
 
 
@@ -355,8 +416,13 @@ body
 				width: auto; height: 22%;
 
 				cursor: var(--defaultCursor);
+
+				filter: drop-shadow(0px .75px 1.25px black);
 				/*cursor: grab;*/
 			}
+
+				.night main #myOffice img#notepad
+				{ filter: brightness(60%); }
 
 				canvas {
 					position: absolute;
@@ -378,7 +444,12 @@ body
 			{
 				top: 31%; left: 66%;
 				width: auto; height: 26%;
+
+				filter: drop-shadow(0px .75px 1.25px black);
 			}
+
+				.night main #myOffice img#tarzanne
+				{ filter: brightness(60%); }
 
 
 				main #myOffice img#diploma:hover,
@@ -393,7 +464,7 @@ body
 				{
 					transform: scale(1.05);
 					/*opacity: .9;*/
-					filter: brightness(60%);
+					filter: drop-shadow(0px 16px 20px black);
 				}
 
 
@@ -414,7 +485,12 @@ body
 				opacity: 1;
 
 				z-index: 998;
+
+				filter: drop-shadow(0px 6px 8px black);
 			}
+
+				.night main img#jacquouille
+				{ filter: brightness(80%); }
 
 			main img#bulle
 			{
@@ -429,6 +505,8 @@ body
 				opacity: 1;
 
 				z-index: 999;
+
+				filter: drop-shadow(0px 6px 8px black);
 			}
 
 			main img#jacquouille,
@@ -687,20 +765,29 @@ header
 		transform: translateX(0%);
 	}	
 
+	body.night #menu { background-color: #1C1C1C; }
+		body.night #menu { color: white; }
+		body.night #menu a { color: red; }
+
 
 		#menu h1
 		{
-			font-size: 56px;
+			font-size: 48px;
 		}
 
 		#menu p, ul
 		{
-			font-size: 24px;
+			font-size: 26px;
+			padding-bottom: calc(var(--headerHeight) / 3);
 		}
+
+			#menu p:last-child
+			{ padding-bottom: 0; }
 
 		#menu .credits
 		{
 			padding-top: calc(2 * var(--headerHeight) / 3);
+			padding-bottom: var(--headerHeight);
 
 			font-size: 18px;
 			text-align: center;
@@ -710,7 +797,15 @@ header
 		{
 			cursor: url("rsrc/img/cursor-pointer.png"), pointer;
 			text-decoration: none;
+			color: #c73c3e;
+
+			display: inline-block;
+			transition: all .2s ease;
+			transform-origin: center;
 		}
+
+			/*#menu a:visited { color: #d59091; }*/
+			#menu a:hover { opacity: .6; transform: scale(1.03); }
 
 
 
