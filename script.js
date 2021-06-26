@@ -58,7 +58,7 @@
 				"diploma",
 				"arnaud.engineer",
 				"rsrc/img/logos/arnaud-engineer.svg",
-				"besoin d'un ingénieur couteau-suisse ? d'un développeur web ?<br/><br/>Alors n'hésitez pas à me rendre visite sur mon site professionnel où vous pourrez voir entre autres l'étendu de mes compétences, mon cursus, mon CV et meme me contacter.",
+				"<p>besoin d'un développeur web ? d'un ingénieur informatique \"touche à tout\" ? d'un profil technique mais \"pas que\" ?</p><p>Alors, n'hésite pas à visiter mon site pro, où tu trouvereras mon CV et ma carte de visite.</p>",
 				"/img",
 				"https://arnaud.engineer"
 			),
@@ -67,7 +67,7 @@
 				"ruler",
 				"truesiz.es",
 				"rsrc/img/logos/truesizes.svg",
-				"Ça donne quoi déjà 25cm x 17cm ?<br/><br/>Si vous ne vous êtes jamais posé la question, ce site n'est pas fait pour vous.<br/><br/>Sinon, grâce à sa calibration automatique de l'écran (expérimentale, mais surprenante pour quelques chose qu'on est pas sensé pouvoir faire avec les techno web), truesiz.es peut vous fournir très facilement la réponse.",
+				"<p>Ça donne quoi déjà 25cm x 17cm ?</p><p>Mon frère m'a un jour fait la réflexion qu'il était dommage de ne pas pouvoir afficher la vrai taille d'un objet sur les sites de e-commerce. et pour cause, les langages web ne sont absolument pas conçus pour ça.</p><p>truesiz.es est une tentative de lui offir cet outil (et aux autres), grâce à des fonctionnalités expérimentales de calibration automatique. Au besoin, il y a aussi un outil de calibration manuelle (à l'aide d'un objet ou en sélectionnant une taille d'écran).</p>",
 				"/img",
 				"https://truesiz.es"
 			),
@@ -76,10 +76,10 @@
 				"macbook",
 				"JoliTube",
 				"rsrc/img/logos/jolitube.png",
-				"<br/>\"La télévision, pour ceux qui préfèrent youtube\"<br/><br/>sur JoliTube, retrouvez une cinquantaine de chaînes thématiques pour toutes les envies : films, séries, comédie, musique, ambiance, curiosités étranges de fin fond de catalogue ...<br/><br/>JoliTube, c'est aussi l'aboutissement de quinze ans de visionnage (trop ?) intensif de youtube, dailymotion, vimeo, ... et un moyen de me persuader que je n'y ai pas perdu mon temps ... en faisant perdre celui des autres",
+				"<p>\"La télévision, pour ceux qui préfèrent youtube\"</p><p>auprès de mes amis, j'ai souvent la réputation d'etre celui qui va ramener des vidéos bizarres qui sortent de nulle part. En effet, depuis quinze ans, j'ai énormement (trop ?) exploré les tréfonds de youtube, dailymotion, vimeo, ...</p><p>jolitube est un florilège de mon historique, avec aussi bien des choses connues que des étrangetées à 200 vues. Le tout, organisé en une cinquantaine de chaînes thématiques pour toutes les envies : films, séries, comédie, musique, ambiance, curiosités ...<p>enfin, c'est aussi un moyen de me persuader que je n'ai pas trop perdu mon temps ... en faisant perdre celui des autres</p>",
 				"/img",
 				"https://jolitube.com"
-			),
+			)/*,
 			new Site(
 				"tarzanne",
 				"tarzanne",
@@ -88,7 +88,7 @@
 				"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 				"/img",
 				"https://tarzanne.com"
-			)
+			)*/
 		];
 
 
@@ -104,7 +104,7 @@ function displayFrame(origin, site)
 			document.getElementById("content-description").innerHTML = lSite[i].description;
 			//document.getElementById("content-img").setAttribute("src" , lSite[i].img);
 			document.getElementById("content-link").setAttribute("href" , lSite[i].link);
-			document.getElementById("content-link").innerHTML = "visit " + lSite[i].name;
+			document.getElementById("content-link").innerHTML = "Visiter " + lSite[i].name;
 
 			document.getElementById("content-logo").setAttribute("src" , lSite[i].logo);
 

@@ -89,6 +89,49 @@ filter: drop-shadow(16px 16px 20px red);
 	*/
 }
 
+
+
+
+
+
+
+
+
+
+/* width */
+::-webkit-scrollbar
+{ width: 14px; }
+
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black; 
+  border-radius: 6px;
+  border: solid 3px #ffffed;
+}
+
+	.night ::-webkit-scrollbar-thumb {
+	  background: white;
+	  border: solid 3px #1C1C1C;
+	}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+{ background: #3d3d3d; }
+
+	.night ::-webkit-scrollbar-thumb:hover
+	{ background: lightgray; }
+
+
+
+
+
+
+
+
+
+
+
 body
 {
 	overflow: hidden;
@@ -199,8 +242,6 @@ body
 			{
 				top: 10%; left: 7%;
 				width: 20%; height: 20%;
-
-				filter: drop-shadow(0px .75px 1.25px black);
 			}
 
 				.night main #myOffice img#diploma
@@ -222,8 +263,6 @@ body
 				top: 40%; left: 5%;
 				width: 9%; height: 9%;
 				cursor: url("rsrc/img/cursor-pointer.png"), pointer;
-
-				filter: drop-shadow(0px .75px 1.25px black);
 			}
 
 				.night main #myOffice img#switch
@@ -237,8 +276,6 @@ body
 				top: 8%; left: 73%;
 				width: auto; height: 38%;
 				cursor: var(--defaultCursor);
-
-				filter: drop-shadow(0px 6px 8px black);
 			}
 
 				.night main #myOffice img#shelf
@@ -249,8 +286,6 @@ body
 					top: 23%; left: 77%;
 					width: 12%; height: 18%;
 					cursor: url("rsrc/img/cursor-pointer.png"), pointer;
-
-					filter: drop-shadow(0px .75px 1.25px black);
 				}
 
 					.night main #myOffice img#radio
@@ -265,8 +300,6 @@ body
 
 					animation: sleepy 3.0s;
 					animation-iteration-count: infinite;
-
-					filter: drop-shadow(0px .75px 1.25px black);
 				}
 
 					.night main #myOffice img#vega
@@ -284,8 +317,6 @@ body
 				bottom: 0%; left: 2.5%;
 				width: 95%; height: auto;
 				cursor: var(--defaultCursor);
-
-				filter: drop-shadow(0px 6px 8px black);
 			}
 
 				.night main #myOffice img#desk
@@ -297,7 +328,7 @@ body
 				top: 75%; left: 37%;
 				width: 26%; height: auto;
 
-				filter: drop-shadow(0px .75px 1.25px black);
+				cursor: var(--defaultCursor);
 			}
 
 				.night main #myOffice img#keyboard
@@ -308,8 +339,6 @@ body
 				top: 76%; left: 67%;
 				width: auto; height: 8%;
 				cursor: var(--onMouseCursor);
-
-				filter: drop-shadow(0px .75px 1.25px black);
 			}
 
 				.night main #myOffice img#mouse
@@ -320,8 +349,6 @@ body
 				top: 14%; left: 35%;
 				width: auto; height: 46%;
 				cursor: var(--defaultCursor);
-
-				filter: drop-shadow(0px .75px 1.25px black);
 			}
 				.night main #myOffice img#monitor
 				{ filter: brightness(60%); }
@@ -332,8 +359,6 @@ body
 					width: auto; height: 1.5%;
 
 					z-index: 9;
-
-					filter: drop-shadow(0px .75px 1.25px black);
 				}
 
 				#monitor-background, 
@@ -371,8 +396,6 @@ body
 			{
 				top: 38%; left: 16%;
 				width: auto; height: 26%;
-
-				filter: drop-shadow(0px .75px 1.25px black);
 			}
 
 				.night main #myOffice img#macbook
@@ -401,8 +424,6 @@ body
 			{
 				top: 62%; left: 33%;
 				width: auto; height: 15%;
-
-				filter: drop-shadow(0px .75px 1.25px black);
 			}
 
 				.night main #myOffice img#ruler
@@ -416,8 +437,6 @@ body
 				width: auto; height: 22%;
 
 				cursor: var(--defaultCursor);
-
-				filter: drop-shadow(0px .75px 1.25px black);
 				/*cursor: grab;*/
 			}
 
@@ -445,7 +464,7 @@ body
 				top: 31%; left: 66%;
 				width: auto; height: 26%;
 
-				filter: drop-shadow(0px .75px 1.25px black);
+				cursor: var(--defaultCursor);
 			}
 
 				.night main #myOffice img#tarzanne
@@ -453,18 +472,18 @@ body
 
 
 				main #myOffice img#diploma:hover,
-				main #myOffice img#keyboard:hover,
+				/*main #myOffice img#keyboard:hover,*/
 				main #myOffice img#mouse:hover,
 				main #myOffice #macbook:hover,
 				main #myOffice #macbook:hover + video,
 				main #myOffice #macbook:hover + #macbook_background,
 				main #myOffice img#ruler:hover,
-				main #myOffice img#tarzanne:hover,
+				/*main #myOffice img#tarzanne:hover,*/
 				main #myOffice img#sticker:hover
 				{
 					transform: scale(1.05);
-					/*opacity: .9;*/
-					filter: drop-shadow(0px 16px 20px black);
+					opacity: .8;
+					/*filter: drop-shadow(0px 16px 20px black);*/
 				}
 
 
@@ -485,8 +504,6 @@ body
 				opacity: 1;
 
 				z-index: 998;
-
-				filter: drop-shadow(0px 6px 8px black);
 			}
 
 				.night main img#jacquouille
@@ -505,8 +522,6 @@ body
 				opacity: 1;
 
 				z-index: 999;
-
-				filter: drop-shadow(0px 6px 8px black);
 			}
 
 			main img#jacquouille,
@@ -617,21 +632,28 @@ header
 		position: absolute;
 		top: 0; left: 0;
 		height: var(--frameHeight);
-		display: none;
+		display: block;
+
 		z-index: 100;
 
 		transition: all .3s ease;
 
 		overflow: hidden;
+
+		transform: translateX(-100%);
+		transition: all .2s ease;
 	}
 
 		#link-presentation.displayed
-		{ display: block; }
+		{ transform: translateX(0%); }
+
+		/*#link-presentation.displayed
+		{ display: block; }*/
 
 		#link-presentation-background
 		{
 			z-index: 100;
-			background-color: black;
+			/*background-color: black;*/
 			opacity: 0;
 			width: max(100vw, (16 / 9) * 100vh);
 			height: 100vh;
@@ -642,14 +664,19 @@ header
 		{
 			position: fixed;
 			/*top: max(20px, min(10vh, 10vw)); left: max(20px, min(10vh, 10vw));*/
-			top: max(10px + var(--headerHeight), min(6vh, 6vw) + var(--headerHeight)); left: max(10px + var(--frameMargin), min(6vh, 6vw) + var(--frameMargin));
+			top: max(10px, min(6vh, 6vw)); left: max(10px + var(--frameMargin), min(6vh, 6vw) + var(--frameMargin));
 			width: min(500px, 88vw);
 			height: min(500px, 88vh);
-			background-color: #ffffed;
+			
+			/*background-color: #ffffed;*/
+			/*background-color: red;*/
+			background: no-repeat url("rsrc/img/paper-background.svg");
+
+
 
 			padding: max(10px, min(6vh, 6vw));
 
-			box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+			/*box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;*/
 
 			transition: all .3s ease;
 
@@ -664,13 +691,25 @@ header
 		}
 
 
-
 		#content-logo
 		{
 			max-height: 60px;
 			width: auto;
 			max-width: 50%;
+
+			padding-bottom: 20px;
 		}
+
+		#content-frame p
+		{
+			padding-bottom: 20px;
+		}
+
+		#content-frame p:last-child
+		{
+			padding-bottom: 0px;
+		}
+
 
 
 
@@ -722,8 +761,6 @@ header
 	}
 
 
-
-	/* TODO :; filter: drop-shadow(16px 16px 20px red); */
 
 
 
