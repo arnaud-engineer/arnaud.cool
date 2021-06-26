@@ -629,9 +629,9 @@ header
 
 	#link-presentation
 	{ 
-		position: absolute;
+		position: fixed;
 		top: 0; left: 0;
-		height: var(--frameHeight);
+		height: 100vh;
 		display: block;
 
 		z-index: 100;
@@ -662,15 +662,18 @@ header
 
 		#content-frame
 		{
-			position: fixed;
+			position: fixed !important;
 			/*top: max(20px, min(10vh, 10vw)); left: max(20px, min(10vh, 10vw));*/
-			top: max(10px, min(6vh, 6vw)); left: max(10px + var(--frameMargin), min(6vh, 6vw) + var(--frameMargin));
-			width: min(500px, 88vw);
-			height: min(500px, 88vh);
+			top: max(10px + var(--headerHeight), min(6vh, 6vw) + var(--headerHeight)); left: max(10px + var(--frameMargin), min(6vh, 6vw) + var(--frameMargin));
+			width: min(500px, 88vw, 88vh);
+			height: min(500px, 88vw, 88vh);
 			
 			/*background-color: #ffffed;*/
 			/*background-color: red;*/
 			background: no-repeat url("rsrc/img/paper-background.svg");
+
+
+			overflow: scroll;
 
 
 
@@ -685,30 +688,30 @@ header
 			transform: translateY(50%);
 		}
 
-		.displayed #content-frame
-		{
-			transform: translateY(0%);
-		}
+			.displayed #content-frame
+			{
+				transform: translateY(0%);
+			}
 
 
-		#content-logo
-		{
-			max-height: 60px;
-			width: auto;
-			max-width: 50%;
+			#content-logo
+			{
+				max-height: 60px;
+				width: auto;
+				max-width: 50%;
 
-			padding-bottom: 20px;
-		}
+				padding-bottom: 20px;
+			}
 
-		#content-frame p
-		{
-			padding-bottom: 20px;
-		}
+			#content-frame p
+			{
+				padding-bottom: 20px;
+			}
 
-		#content-frame p:last-child
-		{
-			padding-bottom: 0px;
-		}
+			#content-frame p:last-child
+			{
+				padding-bottom: 0px;
+			}
 
 
 

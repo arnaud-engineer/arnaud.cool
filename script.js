@@ -76,7 +76,7 @@
 				"macbook",
 				"JoliTube",
 				"rsrc/img/logos/jolitube.png",
-				"<p>\"La télévision, pour ceux qui préfèrent youtube\"</p><p>auprès de mes amis, j'ai souvent la réputation d'etre celui qui va ramener des vidéos bizarres qui sortent de nulle part. En effet, depuis quinze ans, j'ai énormement (trop ?) exploré les tréfonds de youtube, dailymotion, vimeo, ...</p><p>jolitube est un florilège de mon historique, avec aussi bien des choses connues que des étrangetées à 200 vues. Le tout, organisé en une cinquantaine de chaînes thématiques pour toutes les envies : films, séries, comédie, musique, ambiance, curiosités ...<p>enfin, c'est aussi un moyen de me persuader que je n'ai pas trop perdu mon temps ... en faisant perdre celui des autres</p>",
+				"<p>\"La télévision, pour ceux qui préfèrent youtube\"</p><p>auprès de mes amis, j'ai souvent la réputation d'etre celui qui va ramener des vidéos bizarres qui sortent de nulle part. En effet, depuis quinze ans, j'ai beaucoup (trop ?) exploré les tréfonds de youtube, dailymotion, vimeo, ...</p><p>jolitube est un florilège de mon historique, avec aussi bien des choses connues que des étrangetées à 200 vues. Le tout, organisé en une cinquantaine de chaînes thématiques pour toutes les envies : films, séries, comédie, musique, ambiance, curiosités ...<p>enfin, c'est aussi un moyen de me persuader que je n'ai pas trop perdu mon temps ... en faisant perdre celui des autres !</p>",
 				"/img",
 				"https://jolitube.com"
 			)/*,
