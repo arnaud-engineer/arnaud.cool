@@ -81,8 +81,10 @@ filter: drop-shadow(16px 16px 20px red);
 	--frameMargin: max((calc(100vw - var(--frameWidth)) / 2), 0vw);
 
 	/*--defaultCursor: url("rsrc/cursors/stupid-pikachu.png"), default;*/
-	--defaultCursor: url("rsrc/img/cursor-default.png"), default;
-	--onMouseCursor: url("rsrc/img/cursor-pointer.png"), pointer;
+	--defaultCursor: url("rsrc/cursors/cursor-default.png"), default;
+	--onMouseCursor: url("rsrc/cursors/cursor-pointer.png"), pointer;
+
+	--pointerCursor: url("rsrc/cursors/cursor-pointer.png") 24 0, pointer;
 
 	/*
 	--frameMargin: calc((100vw - var(--frameWidth)) / 2);
@@ -225,7 +227,7 @@ body
 				transform-origin: center;
 				transition: all .3s ease;
 
-				cursor: url("rsrc/img/cursor-zoom.png"), zoom-in;
+				cursor: url("rsrc/cursors/cursor-zoom.png"), zoom-in;
 
 				/*background-color: orange;*/
 			}
@@ -262,7 +264,7 @@ body
 			{
 				top: 40%; left: 5%;
 				width: 9%; height: 9%;
-				cursor: url("rsrc/img/cursor-pointer.png"), pointer;
+				cursor: var(--pointerCursor);
 			}
 
 				.night main #myOffice img#switch
@@ -285,7 +287,7 @@ body
 				{
 					top: 23%; left: 77%;
 					width: 12%; height: 18%;
-					cursor: url("rsrc/img/cursor-pointer.png"), pointer;
+					cursor: var(--pointerCursor);
 				}
 
 					.night main #myOffice img#radio
@@ -296,7 +298,7 @@ body
 					top: 1%; left: 76%;
 					width: auto; height: 18%;
 
-					cursor: url("rsrc/img/cursor-grab.png"), grab;
+					cursor: url("rsrc/cursors/cursor-grab.png"), grab;
 
 					animation: sleepy 3.0s;
 					animation-iteration-count: infinite;
@@ -453,7 +455,7 @@ body
 					background-color: transparent; /* transparent */
 					border: none;
 
-					cursor: url("rsrc/img/cursor-pen.png"), crosshair;
+					cursor: url("rsrc/cursors/cursor-pen.png") 4 4, crosshair;
 				}
 
 
@@ -570,7 +572,7 @@ header
 			transition: all .2s ease;
 			transform-origin: left;
 
-			cursor: url("rsrc/img/cursor-pointer.png"), pointer;
+			cursor: var(--pointerCursor);
 		}
 
 			header h1 a:hover
@@ -599,7 +601,7 @@ header
     	border: none;
     	background-color: transparent;
 
-    	cursor: url("rsrc/img/cursor-pointer.png"), pointer;
+    	cursor: var(--pointerCursor);
 	}
 
 		header button img
@@ -719,7 +721,7 @@ header
 
 			#content-frame a
 			{
-				cursor: url("rsrc/img/cursor-pointer.png"), pointer;
+				cursor: var(--pointerCursor);
 				text-decoration: none;
 				color: #c73c3e;
 
@@ -853,7 +855,7 @@ header
 
 		#menu a
 		{
-			cursor: url("rsrc/img/cursor-pointer.png"), pointer;
+			cursor: var(--pointerCursor);
 			text-decoration: none;
 			color: #c73c3e;
 
