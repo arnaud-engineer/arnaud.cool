@@ -285,7 +285,7 @@ body
 
 				main #myOffice img#radio
 				{
-					top: 23%; left: 77%;
+					top: 23%; left: 78%;
 					width: 12%; height: 18%;
 					cursor: var(--pointerCursor);
 				}
@@ -295,8 +295,8 @@ body
 
 				main #myOffice img#vega
 				{
-					top: 1%; left: 76%;
-					width: auto; height: 18%;
+					top: 0.5%; left: 76%;
+					width: auto; height: 16.5%;
 
 					cursor: url("rsrc/cursors/cursor-grab.png"), grab;
 
