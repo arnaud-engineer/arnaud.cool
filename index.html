@@ -2,23 +2,22 @@
 <html lang="fr">
 	<head>
 		<!-- ENCODAGE -->
-			<meta charset="utf-8" />
+		<meta charset="utf-8" />
 		<!-- PAGE INFO -->
-			<title>arnaud.cool</title>
+		<title>arnaud.cool</title>
 		<!-- RESPONSIVENESS -->
-			<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 		<!-- CSS -->
-			<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="style.css" />
 		<!-- JavaScript (ORDER : https://support.freshmarketer.com/support/solutions/articles/50000001426-synchronous-and-asynchronous-script-execution )-->
-			<script src="script.js"></script>
+		<script src="script.js"></script>
 	</head>
 
 	<body>
-		<noscript>JavaScript is currently disabled on your browser, to enhanced your browsing experience you should activate it : <a href="https://www.enable-javascript.com">see how</a></noscript>
 
 		<header>
 			<div>
-				<button><img src="rsrc/img/hamburger-button.svg" onclick="menuOnOff();"/></button> <!-- ☰ -->
+				<button><img src="rsrc/img/hamburger-button.svg" onclick="menuOnOff();"/></button>
 				<h1>
 					<a href="#"><img src="rsrc/img/arnaud-cool-logo.svg" id="site-logo"/></a>
 				</h1>
@@ -26,146 +25,140 @@
 		</header>
 
 		<main>
+
+			<!-- OFFICE FRAME (visible) -->
 			<div id="myOffice">
-				<!--<img id="logo" src="rsrc/img/arnaudCoolLogo.svg"/>-->
+
+				<noscript>JavaScript is currently disabled on your browser, to enhanced your browsing experience you should activate it : <a href="https://www.enable-javascript.com">see how</a></noscript>
+
+				<!-- BACKGROUND -->
+
 				<img id="diploma" src="rsrc/img/diploma.svg" onclick="displayFrame(this, 'arnaud-engineer');"/>
 				<img id="switch" src="rsrc/img/switch-on.svg" onclick="setNightMode();"/>
 				<img id="sticker" src="rsrc/img/sticker.svg" onclick="window.open('https://github.com/arnaud-engineer');"/>
+
+				<!-- SHELF -->
 
 				<img id="shelf" src="rsrc/img/shelf.svg"/>
 					<img id="radio" src="rsrc/img/radio.svg" onclick="playPause();"/>
 					<img id="vega" src="rsrc/img/vega.svg" onclick="catPurring();"/>
 
-
-
-
+				<!-- DESK -->
 
 				<img id="desk" src="rsrc/img/desk.svg"/>
 
-				<img id="keyboard" src="rsrc/img/keyboard.svg"/>
-				<img id="mouse" src="rsrc/img/mouse.svg" onclick="getStupidCursor();"/>
+					<img id="keyboard" src="rsrc/img/keyboard.svg"/>
+					<img id="mouse" src="rsrc/img/mouse.svg" onclick="getStupidCursor();"/>
 
-				<div id="animated_macbook">
-					<img id="macbook" src="rsrc/img/macbook.svg" onclick="displayFrame(this, 'jolitube');"/> <!-- JOLITUBE : https://www.youtube.com/watch?v=Rh5XoRmcky8 .14 -> .32 -->
-					<div id="macbook_background"></div>
-					<video id="jolitube" autoplay loop muted>
-						<source src="rsrc/video/jolitube.mp4" type="video/mp4">
-					</video>
-				</div>
+					<img id="monitor" src="rsrc/img/monitor.svg" />
+						<img id="cursor" src="rsrc/cursors/cursor-default.png" />
+						<div id="monitor-background"></div>
+						<iframe src="#" title="screen-display" id="monitor-display"></iframe> 
 
-				<img id="monitor" src="rsrc/img/monitor.svg" />
-					<img id="cursor" src="rsrc/cursors/cursor-default.png" />
-					<div id="monitor-background"></div>
-					<iframe src="#" title="screen-display" id="monitor-display"></iframe> 
+					<div id="animated_macbook">
+						<img id="macbook" src="rsrc/img/macbook.svg" onclick="displayFrame(this, 'jolitube');"/>
+						<div id="macbook_background"></div>
+						<video id="jolitube" autoplay loop muted>
+							<source src="rsrc/video/jolitube.mp4" type="video/mp4">
+						</video>
+					</div>
 
+					<img id="notepad" src="rsrc/img/notepad.svg"/>
+						<canvas id="myPics" width="100%" height="100%"></canvas>
 
-				<img id="notepad" src="rsrc/img/notepad.svg"/>
-					<canvas id="myPics" width="100%" height="100%"></canvas>
-
-
-				<img id="ruler" src="rsrc/img/ruler.svg" onclick="displayFrame(this, 'truesizes');"/>
-				<img id="tarzanne" src="rsrc/img/tarzanne.svg"/>
-				<!-- <img id="tarzanne" src="rsrc/img/tarzanne.svg" onclick="displayFrame(this, 'tarzanne');"/> -->
+					<img id="ruler" src="rsrc/img/ruler.svg" onclick="displayFrame(this, 'truesizes');"/>
+					<img id="tarzanne" src="rsrc/img/tarzanne.svg"/>
+					<!-- <img id="tarzanne" src="rsrc/img/tarzanne.svg" onclick="displayFrame(this, 'tarzanne');"/> -->
 			</div>
 
+			<!-- OUT OF THE FRAME (should be hidden with CSS) -->
+
+			<!-- Jacquouille -->
 			<img id="jacquouille" src="rsrc/img/jacquouille.svg"/>
 				<img id="bulle" src="rsrc/img/bulle-nuit.svg"/>
 
-			
+			<!-- Presentation post-it -->
+
 			<div id="link-presentation">
 				<div id="link-presentation-background"></div>
 				<div id="content-frame">
 					<div id="content-frame-text">
-						<!--<h1 id="content-name">TEST TITLE</h1>-->
 						<img id="content-logo"/>
-						<p id="content-description">test</p>
-						<!--<img/>-->
-						<p><a id="content-link" target="_blank">go to TEST TITLE</a></p>
+						<p id="content-description"></p>
+						<p><a id="content-link" target="_blank"></a></p>
 					</div>
 				</div>
 			</div>
+
+			<!-- Site menu -->
 			
+			<div id="menu">
 
+				<div class="full-column">
+					<h1>À propos</h1>
+					<p>
+						Salut ! Je m'appelle arnaud, et j'aime bien bricoler des trucs. Je suis ingénieur en informatique "touche à tout", donc ça tourne souvent autour de ça. Mais j'aime aussi beaucoup manger (donc cuisiner), le cinéma "chiant", l'histoire et la philo.
+					</p>
 
+					<p>
+						Ici, tu trouveras mes projets non-commerciaux que je fais parce que c'est cool. Mais tu peux aussi visiter mon <a href="https://arnaud.engineer" target="_blank">site pro</a>. Si tu veux du technique, tu peux directement aller sur mon <a href="https://github.com/arnaud-engineer" target="_blank">github</a>.
+					</p>
 
-
-
-
-
-
-		<div id="menu">
-
-			<div class="full-column">
-				<h1>À propos</h1>
-				<p>
-					Salut ! Je m'appelle arnaud, et j'aime bien bricoler des trucs. Je suis ingénieur en informatique "touche à tout", donc ça tourne souvent autour de ça. Mais j'aime aussi beaucoup manger (donc cuisiner), le cinéma "chiant", l'histoire et la philo.
-				</p>
-
-				<p>
-					Ici, tu trouveras mes projets non-commerciaux que je fais parce que c'est cool. Mais tu peux aussi visiter mon <a href="https://arnaud.engineer" target="_blank">site pro</a>. Si tu veux du technique, tu peux directement aller sur mon <a href="https://github.com/arnaud-engineer" target="_blank">github</a>.
-				</p>
-
-				<p>
-					bisou
-				</p>
-			</div>
-
-			<div class="row">
-
-				<div class="column-1">
-					<h1>Créations</h1>
-					<ul>
-						<li><a href="https://arnaud.engineer" target="_blank">arnaud.engineer</a></li>
-						<li><a href="https://truesiz.es" target="_blank">truesiz.es</a></li>
-						<li><a href="https://jolitube.com" target="_blank">JoliTube</a></li>
-					</ul>
+					<p>
+						bisou
+					</p>
 				</div>
 
-				<!--
-				<div class="column-2">
-					<h1>Cool Stuffs</h1>
-					<ul>
-						<li><a href="https://blog.arnaud.cool" target="_blank">blog</a></li>
-						<li><a href="https://cook.arnaud.cool" target="_blank">recipes</a></li>
-						<li><a href="https://tarzanne.com" target="_blank">tarzanne</a></li>
-					</ul>
-				</div>
-				-->
 
-				<div class="column-3">
-					<h1>Contact</h1>
-					<ul>
-						<li><a href="mailto:contact@arnaud.engineer" target="_blank">contact@arnaud.engineer</a></li>
-						<!--<li><a href="https://twitter.com/Nanaud" target="_blank">Twitter</a></li>-->
-						<li><a href="https://github.com/arnaud-engineer" target="_blank">github</a></li>
-						<li><a href="https://www.linkedin.com/in/nanaud/" target="_blank">LinkedIn</a></li>
-					</ul>
+
+				<div class="row">
+
+					<div class="column-1">
+						<h1>Créations</h1>
+						<ul>
+							<li><a href="https://arnaud.engineer" target="_blank">arnaud.engineer</a></li>
+							<li><a href="https://truesiz.es" target="_blank">truesiz.es</a></li>
+							<li><a href="https://jolitube.com" target="_blank">JoliTube</a></li>
+						</ul>
+					</div>
+
+					<!--
+					<div class="column-2">
+						<h1>Cool Stuffs</h1>
+						<ul>
+							<li><a href="https://blog.arnaud.cool" target="_blank">blog</a></li>
+							<li><a href="https://cook.arnaud.cool" target="_blank">recipes</a></li>
+							<li><a href="https://tarzanne.com" target="_blank">tarzanne</a></li>
+						</ul>
+					</div>
+					-->
+
+					<div class="column-3">
+						<h1>Contact</h1>
+						<ul>
+							<li><a href="mailto:contact@arnaud.engineer" target="_blank">contact@arnaud.engineer</a></li>
+							<!--<li><a href="https://twitter.com/Nanaud" target="_blank">Twitter</a></li>-->
+							<li><a href="https://github.com/arnaud-engineer" target="_blank">github</a></li>
+							<li><a href="https://www.linkedin.com/in/nanaud/" target="_blank">LinkedIn</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="credits">
+					hand crafted by <a href="https://arnaud.engineer">arnaud</a> (code, drawings & font) - <a href="https://github.com/arnaud-engineer/arnaud.cool" target="_blank">sources</a> under mozilla public licence
 				</div>
 
 			</div>
-
-			<div class="credits">
-				hand crafted by <a href="https://arnaud.engineer">arnaud</a> (code, drawings & font) - <a href="https://github.com/arnaud-engineer/arnaud.cool" target="_blank">sources</a> under mozilla public licence
-			</div>
-		</div>
-
-
-
-
-
-
-
-
 
 		</main>
 
-
-
-
-
+		<!-- HIDDEN MEDIA (audio) -->
 
 		<div id="hiddenMedia">
+			<!-- Radio -->
 			<div id="ytPlayerContainer"><div id="player"></div></div>
+			<!-- Vega -->
 			<audio id="cat-purring">
 				<source src="rsrc/sounds/cat_purring.mp3" type="audio/mpeg">
 			</div>

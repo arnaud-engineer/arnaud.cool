@@ -1,39 +1,22 @@
-
-
-/*  =========================================================================
-	 MENU
-	========================================================================= */
-
-	var isMenuOn = false;
-
-	function menuOnOff()
-	{
-		if(isMenuOn === false) {
-			document.getElementById("menu").classList.add("displayed");
-			isMenuOn = true;
-
-			document.getElementsByTagName("main")[0].style.overflow = "hidden";
-		}
-		else {
-			document.getElementById("menu").classList.remove("displayed");
-			isMenuOn = false;
-
-			document.getElementsByTagName("main")[0].style.overflow = "auto";
-		}
-	}
-
-
-
-
 /*  =========================================================================
 	 OBJECT MODEL
 	========================================================================= */
 
-	var lightOn = true;
+	/*  ----------------------------------------
+		 APP DATA
+		---------------------------------------- */
 
-	var isCatPurring = false;
+		class AppData
+		{
+			constructor() {
+				this.lightOn = true;
+				this.isCatPurring = false;
+				this.isMenuOn = false;
+				this.alreadyPickedCursors = [];
+			}
+		}
 
-	var alreadyPickedCursors = [];
+		var app = new AppData();
 
 	/*  ----------------------------------------
 		 SITE
@@ -53,7 +36,7 @@
 		}
 
 		var lSite = [
-		new Site(
+			new Site(
 				"arnaud-engineer",
 				"diploma",
 				"arnaud.engineer",
@@ -91,57 +74,79 @@
 			)*/
 		];
 
+/*  =========================================================================
+	 FUNCTIONS
+	========================================================================= */
+
+	/*  ----------------------------------------
+		 MENU
+		---------------------------------------- */
 
 
-
-
-function displayFrame(origin, site)
-{
-	turnOffLight();
-	for(let i=0 ; i < lSite.length ; i++) {
-		if(site === lSite[i].id) {
-			//document.getElementById("content-name").innerHTML = lSite[i].name;
-			document.getElementById("content-description").innerHTML = lSite[i].description;
-			//document.getElementById("content-img").setAttribute("src" , lSite[i].img);
-			document.getElementById("content-link").setAttribute("href" , lSite[i].link);
-			document.getElementById("content-link").innerHTML = "Visiter " + lSite[i].name;
-
-			document.getElementById("content-logo").setAttribute("src" , lSite[i].logo);
-
-
+	function menuOnOff()
+	{
+		if(app.isMenuOn === false) {
+			document.getElementById("menu").classList.add("displayed");
+			app.isMenuOn = true;
+			document.getElementsByTagName("main")[0].style.overflow = "hidden";
+		}
+		else {
+			document.getElementById("menu").classList.remove("displayed");
+			app.isMenuOn = false;
+			document.getElementsByTagName("main")[0].style.overflow = "auto";
 		}
 	}
 
 
-	document.getElementById("link-presentation").classList.add("displayed");
-	origin.setAttribute("onclick", "hideFrame(this, '" + site + "');");
-	document.getElementById("link-presentation-background").setAttribute("onclick", "hideFrame(this, '" + site + "');");
-}
+	/*  ----------------------------------------
+		 DESCRIPTION FRAMES (post-it)
+		---------------------------------------- */
 
-function hideFrame(origin, site)
-{
-	if(lightOn === true)
-		turnOnLight();
-	document.getElementById("link-presentation").classList.remove("displayed");
-	//origin.setAttribute("onclick", "displayFrame(origin, site);");
-	//origin.setAttribute("onclick", "displayFrame(this, '" + site + "');");
+		function displayFrame(origin, site)
+		{
+			turnOffLight();
+			for(let i=0 ; i < lSite.length ; i++) {
+				if(site === lSite[i].id) {
+					document.getElementById("content-description").innerHTML = lSite[i].description;
+					document.getElementById("content-link").setAttribute("href" , lSite[i].link);
+					document.getElementById("content-link").innerHTML = "Visiter " + lSite[i].name;
+					document.getElementById("content-logo").setAttribute("src" , lSite[i].logo);
+					document.getElementById("content-logo").style.display = "block";
+				}
+			}
 
 
-	for(let i=0 ; i < lSite.length ; i++) {
-		document.getElementById(lSite[i].object).setAttribute("onclick", "displayFrame(this, '" + lSite[i].id + "');");
-	}
-}
+			document.getElementById("link-presentation").classList.add("displayed");
+			origin.setAttribute("onclick", "hideFrame(this, '" + site + "');");
+			document.getElementById("link-presentation-background").setAttribute("onclick", "hideFrame(this, '" + site + "');");
+		}
+
+		function hideFrame(origin, site)
+		{
+			if(app.lightOn === true)
+				turnOnLight();
+			
+			document.getElementById("link-presentation").classList.remove("displayed");
+			document.getElementById("content-description").innerHTML = "";
+			document.getElementById("content-link").innerHTML = "";
+			document.getElementById("content-logo").setAttribute("src" , "");
+			document.getElementById("content-logo").style.display = "none";
+
+			for(let i=0 ; i < lSite.length ; i++) {
+				document.getElementById(lSite[i].object).setAttribute("onclick", "displayFrame(this, '" + lSite[i].id + "');");
+			}
+		}
 
 
 	/*  ----------------------------------------
-		 JACQUOUILLE
+		 DAY / NIGHT
 		---------------------------------------- */
 
 		function setDayMode()
 		{
 			turnOnLight();
 			jacquouilleAnimation();
-			lightOn = true;
+			app.lightOn = true;
 		}
 
 			function turnOnLight()
@@ -157,7 +162,7 @@ function hideFrame(origin, site)
 		{
 			turnOffLight();
 			jacquouilleAnimation();
-			lightOn = false;
+			app.lightOn = false;
 		}
 
 			function turnOffLight()
@@ -180,23 +185,6 @@ function hideFrame(origin, site)
 
 		}
 
-	/*  ----------------------------------------
-		 VEGA
-		---------------------------------------- */
-
-
-
-		function catPurring()
-		{
-			if(isCatPurring === false) {
-				document.getElementById("cat-purring").play();
-				isCatPurring = true;
-			}
-			else {
-				document.getElementById("cat-purring").pause();
-				isCatPurring = false;
-			}
-		}
 
 	/*  ----------------------------------------
 		 MOUSE
@@ -204,36 +192,53 @@ function hideFrame(origin, site)
 
 		function getStupidCursor()
 		{
-			// PICK A CURSOR
 			let lStupidCursors = ["cursor-default", "stupid-shooter", "stupid-pig", "stupid-pikachu", "stupid-sonic", "stupid-saber"];
 
-
-			if (alreadyPickedCursors.length === lStupidCursors.length)
-				alreadyPickedCursors = [alreadyPickedCursors[alreadyPickedCursors.length - 1]];
+			// PICK THE NEXT RANDOM CURSOR
+			if (app.alreadyPickedCursors.length === lStupidCursors.length)
+				app.alreadyPickedCursors = [app.alreadyPickedCursors[app.alreadyPickedCursors.length - 1]];
 			let i = Math.floor(Math.random() * lStupidCursors.length);
-			while(alreadyPickedCursors.includes(i) || (alreadyPickedCursors.length === 0 && i === 0)) {
+			while(app.alreadyPickedCursors.includes(i) || (app.alreadyPickedCursors.length === 0 && i === 0)) {
 				i = Math.floor(Math.random() * lStupidCursors.length);
 			}
-			alreadyPickedCursors.push(i);
+			app.alreadyPickedCursors.push(i);
 
-
+			// LINK THE IMAGE
 			let defaultCursorPath = "url('rsrc/cursors/" + lStupidCursors[i] + ".png'), default";
 			let onMouseCursorPath = "url('rsrc/cursors/" + lStupidCursors[i] + ".png'), pointer";
 			if(i === 0)
 				onMouseCursorPath = "url('rsrc/cursors/cursor-pointer.png'), pointer";
 
-
-			// UPDATE
+			// UPDATE THE CURSOR
 			let root = document.documentElement;
 			root.style.setProperty("--defaultCursor", defaultCursorPath);
 			root.style.setProperty("--onMouseCursor", onMouseCursorPath);
+
 			// MONITOR CURSOR
 			document.getElementById("cursor").setAttribute("src", "rsrc/cursors/" + lStupidCursors[i] + ".png");
 		}
 
-    /* -----------------------------
-        YOUTUBE PLAYER LOADING
-       ----------------------------- */
+
+	/*  ----------------------------------------
+		 VEGA
+		---------------------------------------- */
+
+		function catPurring()
+		{
+			if(app.isCatPurring === false) {
+				document.getElementById("cat-purring").play();
+				app.isCatPurring = true;
+			}
+			else {
+				document.getElementById("cat-purring").pause();
+				app.isCatPurring = false;
+			}
+		}
+
+
+	/*  ----------------------------------------
+		 YOUTUBE PLAYER LOADING
+		---------------------------------------- */
 
     //YouTube player required variables
     var player;
@@ -300,6 +305,14 @@ function hideFrame(origin, site)
         		document.getElementById("radio").classList.remove("playing");
         	}
         }
+
+
+
+
+
+
+
+
 
 
 /*  =========================================================================
@@ -427,7 +440,6 @@ document.addEventListener('DOMContentLoaded', function(event)
 
 
 
-	//onmousemove = function(e){console.log("mouse location:", e.clientX, e.clientY)};
 });
 
 

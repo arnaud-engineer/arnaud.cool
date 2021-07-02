@@ -1,304 +1,312 @@
-@font-face {
-  font-family: 'arnaud-cool';
-  src: url(rsrc/fonts/arnaud-cool.eot);
-  src: url(rsrc/fonts/arnaud-cool.eot?#iefix) format('embedded-opentype'),
-       url(rsrc/fonts/arnaud-cool.svg#arnaud-cool) format('svg'),
-       url(rsrc/fonts/arnaud-cool.ttf) format('truetype'),
-       url(rsrc/fonts/arnaud-cool.woff) format('woff'),
-       url(rsrc/fonts/arnaud-cool.woff2) format('woff2');
-}
+/* ======================================================================
+	FONT-FACE (always first)
+   ====================================================================== */
 
-
-/*
-filter: drop-shadow(16px 16px 20px red);
-*/
-
-
-
-
-
-
-
-
-
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-
-
-@keyframes sleepy {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.03); }
-  100% { transform: scale(1); }
-}
-
-
-
-#radio.playing {
-  animation: shake 1.5s;
-  animation-iteration-count: infinite;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root
-{
-	--headerHeight: min(80px, 16vh);
-
-	/* automatic calculation */
-	--frameHeight: calc(100vh - var(--headerHeight)); /* cross product of height */
-	--frameWidth: calc((16 * (100vh - var(--headerHeight))) / 9); /* (window width - frame width) / 2 */
-	--frameMargin: max((calc(100vw - var(--frameWidth)) / 2), 0vw);
-
-	/*--defaultCursor: url("rsrc/cursors/stupid-pikachu.png"), default;*/
-	--defaultCursor: url("rsrc/cursors/cursor-default.png"), default;
-	--onMouseCursor: url("rsrc/cursors/cursor-pointer.png"), pointer;
-
-	--pointerCursor: url("rsrc/cursors/cursor-pointer.png") 24 0, pointer;
-
-	/*
-	--frameMargin: calc((100vw - var(--frameWidth)) / 2);
-	*/
-}
-
-
-
-
-
-
-
-
-
-
-/* width */
-#content-frame ::-webkit-scrollbar
-{ width: 14px; }
-
- 
-/* Handle */
-#content-frame ::-webkit-scrollbar-thumb {
-  background: black; 
-  border-radius: 6px;
-  border: solid 3px #ffffed;
-}
-
-	.night #content-frame ::-webkit-scrollbar-thumb {
-	  background: black;
-	  border: solid 3px #ffffed;
+	@font-face {
+		font-family: 'arnaud-cool';
+		src: url(rsrc/fonts/arnaud-cool.eot);
+		src: url(rsrc/fonts/arnaud-cool.eot?#iefix) format('embedded-opentype'),
+			url(rsrc/fonts/arnaud-cool.svg#arnaud-cool) format('svg'),
+			url(rsrc/fonts/arnaud-cool.ttf) format('truetype'),
+			url(rsrc/fonts/arnaud-cool.woff) format('woff'),
+			url(rsrc/fonts/arnaud-cool.woff2) format('woff2');
 	}
 
-/* Handle on hover */
-#content-frame ::-webkit-scrollbar-thumb:hover
-{ background: #3d3d3d; }
+/* ======================================================================
+	ANIMATIONS
+   ====================================================================== */
 
-	.night #content-frame ::-webkit-scrollbar-thumb:hover
-	{ background: lightgray; }
+	@keyframes shake {
+		0%		{ transform: translate(1px, 1px) rotate(0deg); }
+		10%		{ transform: translate(-1px, -2px) rotate(-1deg); }
+		20%		{ transform: translate(-3px, 0px) rotate(1deg); }
+		30%		{ transform: translate(3px, 2px) rotate(0deg); }
+		40%		{ transform: translate(1px, -1px) rotate(1deg); }
+		50%		{ transform: translate(-1px, 2px) rotate(-1deg); }
+		60%		{ transform: translate(-3px, 1px) rotate(0deg); }
+		70%		{ transform: translate(3px, 1px) rotate(-1deg); }
+		80%		{ transform: translate(-1px, -1px) rotate(1deg); }
+		90%		{ transform: translate(1px, 2px) rotate(0deg); }
+		100%	{ transform: translate(1px, -2px) rotate(-1deg); }
+	}
+
+	@keyframes sleepy {
+		0%		{ transform: scale(1); }
+		50%		{ transform: scale(1.03); }
+		100%	{ transform: scale(1); }
+	}
+
+/* ======================================================================
+	GENERAL
+   ====================================================================== */
+
+	/* --------------------------------------------------
+		VARIABLES
+	   -------------------------------------------------- */
+
+		:root
+		{
+			/* HEADER */
+			--headerHeight: min(80px, 16vh);
+
+			/* FRAME DIMENSIONS (office should be 16:9) */
+			--frameHeight: calc(100vh - var(--headerHeight)); /* cross product of height */
+			--frameWidth: calc((16 * (100vh - var(--headerHeight))) / 9); /* (window width - frame width) / 2 */
+			--frameMargin: max((calc(100vw - var(--frameWidth)) / 2), 0vw);
+
+			/* CURSORS */
+			--defaultCursor:	url("rsrc/cursors/cursor-default.png"), default;
+			--onMouseCursor:	url("rsrc/cursors/cursor-pointer.png"), pointer;
+			--pointerCursor:	url("rsrc/cursors/cursor-pointer.png") 24 0, pointer;
+			--grabCursor:		url("rsrc/cursors/cursor-grab.png"), grab;
+
+			/* FONT-SIZES */
+			--font-size-s: 18px; /* 18px */
+			--font-size-m: 25px; /* 25px */
+			--font-size-l: 48px; /* 48px */
+		}
+
+	/* --------------------------------------------------
+		CSS FLAVOURING
+	   -------------------------------------------------- */
+
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+
+		body
+		{
+			overflow: hidden;
+			background-color: #ffffed;
+
+			cursor: var(--defaultCursor);
+
+			font-family: "arnaud-cool", "comic sans ms", serif;
+			font-size: var(--font-size-s);
+		}
 
 
+			h1 { font-size: var(--font-size-l); }
+			/*p, ul { font-size: var(--font-size-m); }*/
 
 
+/* ======================================================================
+	STRUCTURE
+   ====================================================================== */
+
+	/* --------------------------------------------------
+		HEADER
+	   -------------------------------------------------- */
+
+		header {
+			position: fixed;
+			top: 0; left: 0;
+			height: var(--headerHeight);
+			width: 100vw;
+			z-index: 100;
+
+			display: flex;		
+		}
+
+			header > div {
+				width: min(var(--frameWidth), 100vw);
+				margin: auto;
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+			}
 
 
+				header h1 a
+				{
+					display: inline-block;
+
+					text-decoration: none;
+
+					transition: all .2s ease;
+					transform-origin: left;
+
+					cursor: var(--pointerCursor);
+				}
+
+					header h1 a:hover
+					{ transform: scale(1.02); opacity: .8; }
+
+					header h1 a img
+					{
+						height: calc(var(--headerHeight) * .8);
+						/*width: 100%;*/
+						margin: calc(var(--headerHeight) * .1);
+
+						vertical-align: top;
+					}
+
+			header button
+			{
+				width: var(--headerHeight);
+				height: var(--headerHeight);
+				font-size: var(--headerHeight);
+				vertical-align: text-top;
+
+				overflow: hidden; /* bug with text content on firefox TODO : maybe removable in the future */
+
+				/* Prevent default display */
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				border: none;
+				background-color: transparent;
+
+				cursor: var(--pointerCursor);
+			}
+
+				header button img
+				{
+					width: 100%;
+					height: 100%;
+					padding: 20%;
+
+					transition: all .3s ease;
+				}
+
+					header button:hover img
+					{ transform: scale(1.05); opacity: .8; }
 
 
-
-
-
-body
-{
-	overflow: hidden;
-	background-color: #ffffed;
-
-	cursor: var(--defaultCursor);
-	/*cursor: url("rsrc/cursors/stupid-pikachu.png"), default !important;*/
-
-	font-family: "arnaud-cool", "comic sans ms", serif;
-}
+	/* --------------------------------------------------
+		FRAME
+	   -------------------------------------------------- */
 
 	main
 	{
+		/* Position / Dimensions */
+		position: relative;
 		top: var(--headerHeight);
-		/*background-color: orange;*/
-
 		height: var(--frameHeight);
 		width: 100vw;
-
+		/* Overflow */
 		overflow-x: auto;
 		overflow-y: hidden;
-
-		position: relative;
 	}
 
-		/*
-			preserveAspectRatio="xMinYMin meet"
-		*/
 
+		/* Office 16:9 frame */
 		main #myOffice
 		{
-			height: var(--frameHeight);
-			width: var(--frameWidth);
-
-			margin-left: var(--frameMargin);
+			/* Position / Dimensions */
 			position: absolute;
 			top: 0; left: 0;
-
-			overflow: hidden;
-
+			height: var(--frameHeight);
+			width: var(--frameWidth);
 			z-index: 1;
+			/* Marges */
+			margin-left: var(--frameMargin);
+			/* Overflow */
+			overflow: hidden;
 		}
 
-			main #myOffice img#logo
+	/* --------------------------------------------------
+		OFFICE DRAWINGS
+	   -------------------------------------------------- */
+
+		/* COMMON */
+
+		main #myOffice img, main #myOffice video
+		{
+			/* Position */
+			position: absolute;
+			/* Cursor */
+			cursor: url("rsrc/cursors/cursor-zoom.png"), zoom-in;
+			/* Animation */
+			transform-origin: center;
+			transition: all .3s ease;
+		}
+			/* Z-INDEX */
+			main #myOffice img#desk	{ z-index: 8; }
+			main #myOffice img		{ z-index: 10; }
+
+			/* ANIMATIONS */
+			main #myOffice img#diploma:hover,
+			/*main #myOffice img#keyboard:hover,*/
+			main #myOffice img#mouse:hover,
+			main #myOffice #macbook:hover,
+			main #myOffice #macbook:hover + video,
+			main #myOffice #macbook:hover + #macbook_background,
+			main #myOffice img#ruler:hover,
+			/*main #myOffice img#tarzanne:hover,*/
+			main #myOffice img#sticker:hover
 			{
-				position: absolute;
-				top: calc(100% * .8);
-				left: calc(100% * .8);
-				width: 50px; height: 50px;
+				transform: scale(1.05);
+				opacity: .8;
 			}
 
-			/*
-			main #myOffice img#desk
+			main #myOffice img#diploma:active,
+			/*main #myOffice img#keyboard:hover,*/
+			main #myOffice img#mouse:active,
+			main #myOffice #macbook:active,
+			main #myOffice #macbook:active + video,
+			main #myOffice #macbook:active + #macbook_background,
+			main #myOffice img#ruler:active,
+			/*main #myOffice img#tarzanne:hover,*/
+			main #myOffice img#sticker:active
 			{
-				position: absolute;
-				top: 0; left: 0;
-				width: 100%; height: 100%;
-
-				transition: all .2s ease;
+				transform: scale(1.1);
+				opacity: .6;
 			}
-			*/
-
-
-				/*
-				main #myOffice img:hover
-				{
-					transform: scale(1.02);
-					opacity: .8;
-				}
-				*/
-/*
-			main #myOffice img#keyboard
-			{
-				position: absolute;
-				top: 60%;
-				left: 5%;
-				width: 90%; height: 100%;
-
-				transform-origin: top;
-
-				transition: all .2s ease;
-
-				background-color: pink;
-			}
-*/
-
-			main #myOffice img, main #myOffice video
-			{
-				position: absolute;
-
-				transform-origin: center;
-				transition: all .3s ease;
-
-				cursor: url("rsrc/cursors/cursor-zoom.png"), zoom-in;
-
-				/*background-color: orange;*/
-			}
-
-
-				main #myOffice img#desk { z-index: 8; }
-				main #myOffice img {
-					z-index: 10;
-				}
 
 
 			/* BACKGROUND */
-			main #myOffice img#diploma
-			{
+			
+			main #myOffice img#diploma {
 				top: 10%; left: 7%;
 				width: 20%; height: 20%;
 			}
-
 				.night main #myOffice img#diploma
 				{ filter: brightness(60%); }
 
-			main #myOffice img#sticker
-			{
+			main #myOffice img#sticker {
 				position: absolute;
 				top: 15%; left: 65.5%;
 				width: 7%; height: 12%;
 			}
-
 				.night main #myOffice img#sticker
 				{ filter: brightness(60%); }
 
 
-			main #myOffice img#switch
-			{
+			main #myOffice img#switch {
 				top: 40%; left: 5%;
 				width: 9%; height: 9%;
 				cursor: var(--pointerCursor);
 			}
-
 				.night main #myOffice img#switch
 				{ filter: brightness(60%); }
 
 
+			/* SHELF */
 
-
-			main #myOffice img#shelf
-			{
+			main #myOffice img#shelf {
 				top: 8%; left: 73%;
 				width: auto; height: 38%;
 				cursor: var(--defaultCursor);
 			}
-
 				.night main #myOffice img#shelf
 				{ filter: brightness(60%); }
 
-				main #myOffice img#radio
-				{
+				main #myOffice img#radio {
 					top: 23%; left: 78%;
 					width: 12%; height: 18%;
 					cursor: var(--pointerCursor);
 				}
-
 					.night main #myOffice img#radio
 					{ filter: brightness(60%); }
 
-				main #myOffice img#vega
-				{
+					#radio.playing {
+						animation: shake 1.5s;
+						animation-iteration-count: infinite;
+					}
+
+				main #myOffice img#vega {
 					top: 0.5%; left: 76%;
 					width: auto; height: 16.5%;
 
-					cursor: url("rsrc/cursors/cursor-grab.png"), grab;
+					cursor: var(--grabCursor);
 
 					animation: sleepy 3.0s;
 					animation-iteration-count: infinite;
@@ -308,46 +316,33 @@ body
 					{ filter: brightness(60%); }
 
 
-
-
 			/* DESK */
 
-
-
-			main #myOffice img#desk
-			{
+			main #myOffice img#desk {
 				bottom: 0%; left: 2.5%;
 				width: 95%; height: auto;
 				cursor: var(--defaultCursor);
 			}
-
 				.night main #myOffice img#desk
 				{ filter: brightness(60%); }
 
-
-			main #myOffice img#keyboard
-			{
+			main #myOffice img#keyboard {
 				top: 75%; left: 37%;
 				width: 26%; height: auto;
-
 				cursor: var(--defaultCursor);
 			}
-
 				.night main #myOffice img#keyboard
 				{ filter: brightness(60%); }
 
-			main #myOffice img#mouse
-			{
+			main #myOffice img#mouse {
 				top: 76%; left: 67%;
 				width: auto; height: 8%;
 				cursor: var(--onMouseCursor);
 			}
-
 				.night main #myOffice img#mouse
 				{ filter: brightness(60%); }
 
-			main #myOffice img#monitor
-			{
+			main #myOffice img#monitor {
 				top: 14%; left: 35%;
 				width: auto; height: 46%;
 				cursor: var(--defaultCursor);
@@ -355,93 +350,66 @@ body
 				.night main #myOffice img#monitor
 				{ filter: brightness(60%); }
 
-				main #myOffice img#cursor
-				{
+				main #myOffice img#cursor {
 					top: 16%; left: 37%;
 					width: auto; height: 1.5%;
-
 					z-index: 9;
 				}
 
 				#monitor-background, 
 				#monitor-display
-				{
-					filter: saturate(80%);
-				}
+				{ filter: saturate(80%); }
 
-				#monitor-background
-				{
-					position: absolute;
-					top: 15.2%; left: 35.9%;
-					width: 27.3%; height: 27%;
-
-					border:none;
-
-					z-index: 7;
-
-					background-color: #ffffed;
-				}
-
-				#monitor-display
-				{
+				#monitor-display {
 					position: absolute;
 					top: 16.35%; left: 37%;
 					width: 25%; height: 25%;
-
-					border:none;
-
 					z-index: 8;
+					border:none; /* iframe prevent default*/
+				}
+
+				#monitor-background {
+					position: absolute;
+					top: 15.2%; left: 35.9%;
+					width: 27.3%; height: 27%;
+					z-index: 7;
+					background-color: #ffffed;
 				}
 
 
-			main #myOffice img#macbook
-			{
+			main #myOffice img#macbook {
 				top: 38%; left: 16%;
 				width: auto; height: 26%;
 			}
-
 				.night main #myOffice img#macbook
 				{ filter: brightness(60%); }
 
-				#macbook_background
-				{
+				#macbook_background {
 					position: absolute;
-					z-index: 9;
 					top: 38.5%; left: 18.1%;
 					width: 15.6%; height: 17%;
+					z-index: 9;
 					background-color: black;
 				}
 
-				main #myOffice video#jolitube
-				{
-					z-index: 9;
+				main #myOffice video#jolitube {
 					top: 39.25%; left: 18.5%;
 					width: 15%; height: 15%;
-
-					/*border:5px black solid;
-					background-color: black;*/
+					z-index: 9;
 				}
 
-			main #myOffice img#ruler
-			{
+			main #myOffice img#ruler {
 				top: 62%; left: 33%;
 				width: auto; height: 15%;
 			}
-
 				.night main #myOffice img#ruler
 				{ filter: brightness(60%); }
 
-
-
-			main #myOffice img#notepad
-			{
+			main #myOffice img#notepad {
 				top: 66%; left: 18%;
 				width: auto; height: 22%;
-
 				cursor: var(--defaultCursor);
-				/*cursor: grab;*/
 			}
-
 				.night main #myOffice img#notepad
 				{ filter: brightness(60%); }
 
@@ -449,172 +417,69 @@ body
 					position: absolute;
 					top: 69%; left: 20.5%;
 					width: 9.5%; height: 18%;
-
 					z-index: 11;
-
+					/* Style*/
 					background-color: transparent; /* transparent */
 					border: none;
-
 					cursor: url("rsrc/cursors/cursor-pen.png") 4 4, crosshair;
 				}
 
-
-
-
-			main #myOffice img#tarzanne
-			{
+			main #myOffice img#tarzanne {
 				top: 31%; left: 66%;
 				width: auto; height: 26%;
-
 				cursor: var(--defaultCursor);
 			}
-
 				.night main #myOffice img#tarzanne
 				{ filter: brightness(60%); }
 
 
-				main #myOffice img#diploma:hover,
-				/*main #myOffice img#keyboard:hover,*/
-				main #myOffice img#mouse:hover,
-				main #myOffice #macbook:hover,
-				main #myOffice #macbook:hover + video,
-				main #myOffice #macbook:hover + #macbook_background,
-				main #myOffice img#ruler:hover,
-				/*main #myOffice img#tarzanne:hover,*/
-				main #myOffice img#sticker:hover
-				{
-					transform: scale(1.05);
-					opacity: .8;
-					/*filter: drop-shadow(0px 16px 20px black);*/
-				}
+	/* --------------------------------------------------
+		OUT OF THE FRAME
+	   -------------------------------------------------- */	
 
+		main img#jacquouille
+		{
+			/* Position / Dimensions */
+			position: fixed;
+			bottom: -1%; left: 2%;
+			width: max(40%, 380px);
+			height: auto; max-height: 60%;
+			z-index: 998;
+			/* Style */
+			cursor: var(--defaultCursor);
+			opacity: 1;
+			/* Animations */
+			transition: all .4s ease;
+		}
+			.night main img#jacquouille
+			{ filter: brightness(80%); }
 
+		main img#bulle
+		{
+			/* Position / Dimensions */
+			position: fixed;
+			bottom: 20%; left: max(26%, 260px);
+			width: 34%;
+			height: auto; max-height: 40%;
+			z-index: 999;
+			/* Style */
+			cursor: var(--defaultCursor);
+			opacity: 1;
+			/* Animations */
+			transition: all .7s ease;
+		}
 
-
-
-
-			main img#jacquouille
-			{
-				position: fixed;
-				bottom: -1%; left: 2%;
-				width: max(40%, 380px);
-				height: auto; max-height: 60%;
-				cursor: var(--defaultCursor);
-
-				transition: all .4s ease;
-
-				opacity: 1;
-
-				z-index: 998;
-			}
-
-				.night main img#jacquouille
-				{ filter: brightness(80%); }
-
-			main img#bulle
-			{
-				position: fixed;
-				bottom: 20%; left: max(26%, 260px);
-				width: 34%;
-				height: auto; max-height: 40%;
-				cursor: var(--defaultCursor);
-
-				transition: all .7s ease;
-
-				opacity: 1;
-
-				z-index: 999;
-			}
-
+			/* ANIMATION */
 			main img#jacquouille,
 			main img#bulle
 			{ transform: translateY(250%); }
-
 			main img#jacquouille.displayed,
-			main img#bulle.displayed/*.displayed*/
-			{
-				transform: translateY(0%);
-			}
+			main img#bulle.displayed
+			{ transform: translateY(0%); }
 
 
-header
-{
-	height: var(--headerHeight);
-	width: 100vw;
 
-	position: fixed;
-	top: 0;
-	left: 0;
-	display: flex;
 
-	z-index: 100;
-}
-
-	header > div
-	{
-		width: min(var(--frameWidth), 100vw);
-		margin: auto;
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
-	}
-
-	header h1
-	{
-	}
-
-		header h1 a
-		{
-			display: inline-block;
-
-			text-decoration: none;
-
-			transition: all .2s ease;
-			transform-origin: left;
-
-			cursor: var(--pointerCursor);
-		}
-
-			header h1 a:hover
-			{ transform: scale(1.02); opacity: .8; }
-
-			header h1 a img
-			{
-				height: calc(var(--headerHeight) * .8);
-				/*width: 100%;*/
-				margin: calc(var(--headerHeight) * .1);
-
-				vertical-align: top;
-			}
-
-	header button
-	{
-		width: var(--headerHeight);
-		height: var(--headerHeight);
-		font-size: var(--headerHeight);
-		vertical-align: text-top;
-
-		overflow: hidden; /* bug with text content on firefox TODO : maybe removable in the future */
-
-		-webkit-appearance: none;
-    	-moz-appearance: none;
-    	border: none;
-    	background-color: transparent;
-
-    	cursor: var(--pointerCursor);
-	}
-
-		header button img
-		{
-			width: 100%;
-			height: 100%;
-			padding: 20%;
-
-			transition: all .3s ease;
-		}
-
-		header button:hover img
-		{ transform: scale(1.05); opacity: .8; }
 
 
 
@@ -795,85 +660,74 @@ header
 
 
 
+/* ======================================================================
+	MENU
+   ====================================================================== */
 
+	/* --------------------------------------------------
+		BASES
+	   -------------------------------------------------- */
 
-#menu
-{
-	background-color: #ffffed;
-
-	position: fixed;
-	top: var(--headerHeight);
-	left: 0;
-
-	height: var(--frameHeight);
-	width: 100vw;
-
-	padding-top: calc(2 * var(--headerHeight) / 3);
-	padding-left: calc(var(--frameMargin) + max(12px, 10vw));
-	padding-right: calc(var(--frameMargin) + max(12px, 10vw));
-
-	z-index: 99999999999;
-
-	overflow-y: auto;
-
-	transform: translateX(-100%);
-	transition: all .4s ease;
-}
-
-	#menu.displayed
+	#menu
 	{
-		transform: translateX(0%);
-	}	
+		/* Positions / Dimensions */
+		position: fixed;
+		top: var(--headerHeight);
+		left: 0;
+		height: var(--frameHeight);
+		width: 100vw;
+		z-index: 99999999999;
+		/* Marges */
+		padding-top: calc(2 * var(--headerHeight) / 3);
+		padding-left: calc(var(--frameMargin) + max(12px, 10vw));
+		padding-right: calc(var(--frameMargin) + max(12px, 10vw));
+		/* Overflow */
+		overflow-y: auto;
+		/* Style */
+		background-color: #ffffed;
+		font-size: var(--font-size-m);
+		/* Animation */
+		transform: translateX(-100%); /* Hidden on the left by default */
+		transition: all .4s ease;
+	}
 
-	body.night #menu { background-color: #1C1C1C; }
-		body.night #menu { color: white; }
-		body.night #menu a { color: red; }
+		#menu.displayed { transform: translateX(0%); }	
 
+		#menu p { padding-bottom: calc(var(--headerHeight) / 3); }
+			#menu p:last-child { padding-bottom: 0; }
 
-		#menu h1
-		{
-			font-size: 48px;
-		}
-
-		#menu p, ul
-		{
-			font-size: 26px;
-			padding-bottom: calc(var(--headerHeight) / 3);
-		}
-
-			#menu p:last-child
-			{ padding-bottom: 0; }
-
-		#menu .credits
-		{
+		#menu .credits {
 			padding-top: calc(2 * var(--headerHeight) / 3);
 			padding-bottom: var(--headerHeight);
-
-			font-size: 18px;
 			text-align: center;
+			font-size: var(--font-size-s);
 		}
 
-		#menu a
-		{
+		#menu a, #menu a:visited {
+			display: inline-block;
+
 			cursor: var(--pointerCursor);
 			text-decoration: none;
 			color: #c73c3e;
 
-			display: inline-block;
 			transition: all .2s ease;
 			transform-origin: center;
 		}
 
-			/*#menu a:visited { color: #d59091; }*/
-			#menu a:hover { opacity: .6; transform: scale(1.03); }
+			#menu a:hover	{ opacity: .6; transform: scale(1.03); }
+			#menu a:active	{ opacity: .4; transform: scale(1.05); }
 
 
+		/* NIGHT MODE */
+		body.night #menu { background-color: #1C1C1C; }
+			body.night #menu { color: white; }
+			body.night #menu a { color: red; }
 
+	/* --------------------------------------------------
+		CSS GRID
+	   -------------------------------------------------- */
 
-
-
-		.row
-		{
+		.row {
 			padding-top: calc(var(--headerHeight) / 3);
 
 			display: grid;
@@ -881,45 +735,65 @@ header
 			grid-gap: 10px;
 		}
 
+			.column-1, .column-2, .column-3 {
+				padding-top: calc(var(--headerHeight) / 3);
+				grid-row: 1;
+			}
 
-		.column-1, .column-2, .column-3
-		{
-			padding-top: calc(var(--headerHeight) / 3);
-		}
+			.column-1 { grid-column: 1 / 3; }
+			.column-2 { grid-column: 2 / 3; }
+			.column-3 { grid-column: 3 / 3; }
 
-		.column-1
-		{
-			grid-column: 1 / 3;
-			grid-row: 1;
-		}
-
-		.column-2
-		{
-			grid-column: 2 / 3;
-			grid-row: 1;
-		}
-
-		.column-3
-		{
-			grid-column: 3 / 3;
-			grid-row: 1;
-		}
+			/* RESPONSIVE */
 
 			@media (max-width: 768px) {
-				/*.row { grid-template-columns: repeat(2, 1fr); }*/
 				.row { grid-template-columns: repeat(2, 1fr); }
-				.column-1 { grid-column: 1 / 2; grid-row: 1; }
-				.column-2 { grid-column: 2 / 2; grid-row: 1; }
+				.column-1 { grid-column: 1 / 2; }
+				.column-2 { grid-column: 2 / 2; }
 				.column-3 { grid-column: 1 / 2; grid-row: 2; }
 			}
 
 			@media (max-width: 576px) {
-				/*.row { grid-template-columns: repeat(1, 1fr); }*/
 				.row { grid-template-columns: repeat(1, 1fr); }
-				.column-1 { grid-column: 1 / 1; grid-row: 1; }
+				.column-1 { grid-column: 1 / 1; }
 				.column-2 { grid-column: 1 / 1; grid-row: 2; }
 				.column-3 { grid-column: 1 / 1; grid-row: 3; }
 			}
+
+
+
+
+
+
+
+	/* --------------------------------------------------
+		SCROLLBAR
+	   -------------------------------------------------- */
+
+	/* width */
+	#content-frame ::-webkit-scrollbar
+	{ width: 14px; }
+
+	 
+	/* Handle */
+	#content-frame ::-webkit-scrollbar-thumb {
+	  background: black; 
+	  border-radius: 6px;
+	  border: solid 3px #ffffed;
+	}
+
+		.night #content-frame ::-webkit-scrollbar-thumb {
+		  background: black;
+		  border: solid 3px #ffffed;
+		}
+
+	/* Handle on hover */
+	#content-frame ::-webkit-scrollbar-thumb:hover
+	{ background: #3d3d3d; }
+
+		.night #content-frame ::-webkit-scrollbar-thumb:hover
+		{ background: lightgray; }
+
 
 
 
